@@ -1,0 +1,54 @@
+#banner {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  gap: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  justify-content: center;
+  max-width: 1080px;
+  padding: 10px 20px;
+  place-self: center;
+  width: 80%;
+  z-index: 0;
+}
+
+#banner>h1 {
+  font-family: "Caesa";
+  font-size: 2em;
+  font-weight: 100;
+}
+
+@media (min-height: 300px) {
+  #banner {
+    padding: 50px 20px 10px;
+  }
+}
+
+@media (min-width: 540px) and (min-height: 290px) {
+  #banner>h1 {
+    font-size: 5em;
+  }
+}
+
+#banner>p {
+  display: block;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+@media (min-height:500px) {
+  #banner>p {
+    font-size: 1.1em;
+  }
+}

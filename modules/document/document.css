@@ -1,0 +1,75 @@
+@import url("css/reset.css");
+@import url("css/variables.css");
+@import url("css/fonts.css");
+
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+@media only screen and (min-width: 426px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-text);
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+}
+
+* {
+  color: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+  align-items: center;
+  background-color: var(--color-background);
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  color: var(--color-text);
+  cursor: default;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  justify-content: center;
+  overflow: hidden auto;
+  scroll-behavior: smooth;
+  text-align: center;
+  width: 100vw;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.loadingFile {
+  visibility: hidden !important;
+}

@@ -1,0 +1,193 @@
+#best_seller {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: none;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  gap: 15px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  justify-content: center;
+  max-width: 100vw;
+  padding: 0 20px 20px;
+  place-self: center;
+  width: 100%;
+  z-index: 1;
+}
+
+@media (min-height: 430px) and (min-width: 260px) {
+  #best_seller {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) and (min-height: 500px) {
+  #best_seller {
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+#best_seller>h2 {
+  font-family: "Caesa";
+  font-size: 1.2em;
+  font-weight: 100;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+#best_seller-list {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  gap: 15px;
+  overflow: auto hidden;
+  padding: 10px 20px;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+@media (min-width: 590px) {
+  #best_seller-list {
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 769px) and (min-height: 500px) {
+  #best_seller-list {
+    gap: 30px;
+    scrollbar-width: 3px;
+  }
+}
+
+#best_seller-list::-webkit-scrollbar {
+  height: 2px;
+}
+
+@media (min-width: 400px) {
+  #best_seller-list::-webkit-scrollbar {
+    height: 3px;
+  }
+}
+
+[data-best_seller-list-item] {
+  align-items: center;
+  aspect-ratio: 1/1;
+  border: 1px solid var(--color-text);
+  border-radius: 5px;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  color: var(--color-text);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  gap: 3px;
+  justify-content: center;
+  max-width: 100px;
+  min-width: 80px;
+  overflow: hidden;
+  padding: 5px;
+  place-self: center;
+  -webkit-transition: scale 0.4s ease-in-out;
+  -o-transition: scale 0.4s ease-in-out;
+  transition: scale 0.4s ease-in-out;
+  width: 80px;
+}
+
+@media (min-width: 426px) and (min-height: 500px) {
+  [data-best_seller-list-item] {
+    gap: 10px;
+    max-width: 150px;
+    width: 100%;
+  }
+}
+
+[data-best_seller-list-item]:hover {
+  background: var(--color-selected);
+  border: none;
+  scale: 1.1;
+}
+
+[data-best_seller-list-item]:hover * {
+  color: var(--color-background);
+}
+
+[data-best_seller-list-item]>a {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  gap: 3px;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+[data-best_seller-list-item]>a>i {
+  max-height: 80%;
+  max-width: 80%;
+}
+
+[data-best_seller-list-item] i svg path {
+  stroke: var(--color-text);
+  stroke-width: 8px;
+}
+
+[data-best_seller-list-item]:hover i svg path {
+  stroke: var(--color-background);
+}
+
+[data-best_seller-list-item="miscellaneous"] i svg path {
+  fill: var(--color-text);
+}
+
+[data-best_seller-list-item="miscellaneous"]:hover i svg path {
+  fill: var(--color-background);
+}
+
+[data-best_seller-list-item] span {
+  font-size: 0.65em;
+}
+
+@media (min-width: 700px) and (min-height: 500px) {
+  [data-best_seller-list-item] span {
+    font-size: 0.8em;
+  }
+}
+
+@media (min-width: 860px) and (min-height: 500px) {
+  [data-best_seller-list-item] span {
+    font-size: 0.9em;
+  }
+}

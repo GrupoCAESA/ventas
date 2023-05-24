@@ -1,0 +1,37 @@
+[
+  {
+    "container": "#search>a",
+    "path": "/app/home/json/icons/search.json",
+    "loop": true
+  },
+  {
+    "container": "[data-best_seller-list-item=\"miscellaneous\"]",
+    "item": ">a>i",
+    "path": "/app/home/json/icons/miscellaneous.json",
+    "loop": true
+  },
+  {
+    "container": "[data-best_seller-list-item=\"cranes\"]",
+    "item": ">a>i",
+    "path": "/app/home/json/icons/cranes.json",
+    "loop": true
+  },
+  {
+    "container": "[data-best_seller-list-item=\"transport\"]",
+    "item": ">a>i",
+    "path": "/app/home/json/icons/transport.json",
+    "loop": true
+  },
+  {
+    "container": "[data-best_seller-list-item=\"heavy_machinery\"]",
+    "item": ">a>i",
+    "path": "/app/home/json/icons/heavy_machinery.json",
+    "loop": true
+  },
+  {
+    "container": "[data-best_seller-list-item=\"maritime_equipment\"]",
+    "item": ">a>i",
+    "path": "/app/home/json/icons/maritime_equipment.json",
+    "loop": true
+  }
+]

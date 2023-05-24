@@ -1,0 +1,67 @@
+@import url("../../modules/document/document.css");
+@import url("../../modules/menu/menu.css");
+@import url("css/background.css");
+@import url("css/search.css");
+@import url("css/banner.css");
+@import url("css/best_seller.css");
+
+body {
+  background: var(--color-background-gradient);
+  display: grid;
+  grid-template-areas: "header";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+}
+
+@media (min-width: 240px) and (min-height:300px) {
+  body {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+@media (min-width: 769px) and (min-height:500px) {
+  body {
+    grid-template-areas:
+      "menu header"
+      "menu main"
+      "menu footer";
+    grid-template-columns: 55px auto;
+  }
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: none;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  grid-area: main;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  z-index: 0;
+}
+
+@media (min-width: 240px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+footer {
+  grid-area: footer;
+}

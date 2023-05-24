@@ -1,0 +1,31 @@
+[
+  {
+    "container": "#menu-toggler",
+    "item": ">i",
+    "path": "/modules/menu/json/icons/toggler.json"
+  },
+  {
+    "container": "[data-menu-list-item=\"home\"]",
+    "item": ">a>i",
+    "path": "/modules/menu/json/icons/home.json",
+    "loop": true
+  },
+  {
+    "container": "[data-menu-list-item=\"catalogue\"]",
+    "item": ">a>i",
+    "path": "/modules/menu/json/icons/catalogue.json",
+    "loop": true
+  },
+  {
+    "container": "[data-menu-list-item=\"contact\"]",
+    "item": ">a>i",
+    "path": "/modules/menu/json/icons/contact.json",
+    "loop": true
+  },
+  {
+    "container": "[data-menu-list-item=\"appearance\"]",
+    "item": ">a>i",
+    "path": "/modules/menu/json/icons/appearance.json",
+    "loop": true
+  }
+]

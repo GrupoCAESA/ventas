@@ -1,0 +1,15 @@
+[data-style="light"] {
+  --color-selected: rgb(11, 49, 80);
+  --color-background: white;
+  --color-background-gradient: linear-gradient(#f0f0f0 0%, white 60%);
+  --color-text: black;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-style="dark"] {
+  --color-selected: #e9bc2e;
+  --color-background: black;
+  --color-background-gradient: linear-gradient(#222222 0%, black 60%);
+  --color-text: white;
+  --color-shadow: rgba(100, 100, 100, 0.1);
+}

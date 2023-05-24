@@ -1,0 +1,123 @@
+#menu-list {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: space-evenly;
+  display: none;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: space-evenly;
+  grid-area: list;
+  height: 100%;
+  justify-content: space-evenly;
+  overflow: hidden auto;
+  padding: 10px 0;
+  place-self: center;
+  row-gap: 10px;
+  width: 100%;
+}
+
+@media (max-height:350px) {
+  #menu-list {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 769px) and (min-height:500px) {
+  #menu-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+#menu-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+#menu.checked #menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[data-menu-list-item] {
+  align-items: center;
+  border-radius: 5px;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 90%;
+}
+
+[data-menu-list-item]:hover {
+  background-color: var(--color-text);
+}
+
+[data-menu-list-item]:hover * {
+  color: var(--color-background);
+}
+
+[data-menu-list-item]>a {
+  align-items: center;
+  border-radius: 5px;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+}
+
+[data-menu-list-item] svg {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  height: 100%;
+  justify-content: center;
+  max-height: 25px;
+  max-width: 25px;
+  text-align: center;
+  width: 100%;
+}
+
+[data-menu-list-item] path {
+  stroke: var(--color-text);
+}
+
+[data-menu-list-item]:hover path {
+  stroke: var(--color-background);
+}
+
+[data-menu-list-item] span {
+  display: none;
+}
+
+#menu.checked [data-menu-list-item] span {
+  display: block;
+}
