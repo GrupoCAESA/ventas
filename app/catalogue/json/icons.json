@@ -1,0 +1,13 @@
+[
+  {
+    "container": "#filters-toggler",
+    "item": ">i",
+    "path": "/app/catalogue/json/icons/toggler.json"
+  },
+  {
+    "container": "#error>i",
+    "path": "/app/catalogue/json/icons/error.json",
+    "loop": true,
+    "autoplay": true
+  }
+]

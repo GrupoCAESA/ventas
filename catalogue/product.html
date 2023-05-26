@@ -13,17 +13,76 @@
   <meta name="author" content="Stephen Ocka">
   <meta name="copyright" content="Grupo CAESA">
   <title>Producto | Ventas Grupo CAESA</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <link rel="canonical" href="https://ventas.grupocaesa.com.mx/catalogue/product.html">
-  <link rel="stylesheet" href="./Assets/Pages/Product/Product.css">
-  <script type="module" src="./Assets/Pages/Product/Product.js"></script>
+  <link rel="stylesheet" href="../app/product/product.css">
+  <script type="module" src="../app/product/product.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.11.0/lottie.min.js"
     integrity="sha512-XCthc/WzPfa+oa49Z3TI6MUK/zlqd67KwyRL9/R19z6uMqBNuv8iEnJ8FWHUFAjC6srr8w3FMZA91Tfn60T/9Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+  <nav id="menu">
+    <img id="menu-logo" src="../resources/images/logo.webp" alt="Grupo CAESA">
+    <label id="menu-toggler" title="Menú">
+      <i></i>
+      <input type="checkbox">
+    </label>
+    <ul id="menu-list">
+      <li data-menu-list-item="home" title="Inicio">
+        <a href="../index.html">
+          <i></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      <li data-menu-list-item="catalogue" title="Catálogo">
+        <a href="../catalogue.html">
+          <i></i>
+          <span>Productos</span>
+        </a>
+      </li>
+      <li data-menu-list-item="contact" title="Contacto">
+        <a href="../contact.html">
+          <i></i>
+          <span>Contacto</span>
+        </a>
+      </li>
+      <li data-menu-list-item="appearance" title="Apariencia">
+        <a>
+          <i></i>
+          <span>Apariencia</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
+  <aside id="enlarged_image" style="display: none;">
+    <img src="#" alt="Imagen Ampliada">
+    <span class="close">X</span>
+    <span class="before">&#60;</span>
+    <span class="after">&#62;</span>
+  </aside>
+
+  <header></header>
+
+  <main>
+    <figure id="gallery">
+      <img class="loadingFile" src="#" alt="Imagen Principal">
+      <ul></ul>
+    </figure>
+    <table id="information">
+      <tbody></tbody>
+    </table>
+    <section id="specifications">
+      <h2>Especificaciones</h2>
+      <table>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer></footer>
 </body>
 
 </html>

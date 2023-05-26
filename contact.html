@@ -15,15 +15,85 @@
   <title>Contacto | Ventas Grupo CAESA</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="canonical" href="https://ventas.grupocaesa.com.mx/contact.html">
-  <link rel="stylesheet" href="./Assets/Pages/Contact/Contact.css">
-  <script type="module" src="./Assets/Pages/Contact/Contact.js"></script>
+  <link rel="stylesheet" href="app/contact/contact.css">
+  <script type="module" src="app/contact/contact.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.11.0/lottie.min.js"
     integrity="sha512-XCthc/WzPfa+oa49Z3TI6MUK/zlqd67KwyRL9/R19z6uMqBNuv8iEnJ8FWHUFAjC6srr8w3FMZA91Tfn60T/9Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+  <nav id="menu">
+    <img id="menu-logo" src="./resources/images/logo.webp" alt="Grupo CAESA">
+    <label id="menu-toggler" title="Menú">
+      <i></i>
+      <input type="checkbox">
+    </label>
+    <ul id="menu-list">
+      <li data-menu-list-item="home" title="Inicio">
+        <a href="./index.html">
+          <i></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      <li data-menu-list-item="catalogue" title="Catálogo">
+        <a href="./catalogue.html">
+          <i></i>
+          <span>Productos</span>
+        </a>
+      </li>
+      <li data-menu-list-item="contact" title="Contacto">
+        <a href="./contact.html">
+          <i></i>
+          <span>Contacto</span>
+        </a>
+      </li>
+      <li data-menu-list-item="appearance" title="Apariencia">
+        <a>
+          <i></i>
+          <span>Apariencia</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
+  <aside id="background"></aside>
+
+  <section id="contact">
+    <img src="resources/images/logo.webp" alt="Grupo CAESA">
+    <p class="typewriter"></p>
+    <h2>Datos de Contacto</h2>
+    <table>
+      <tbody>
+        <tr data-contact-info="phone">
+          <td>Móvil:</td>
+          <th>55 43 82 84 65</th>
+        </tr>
+        <tr data-contact-info="email">
+          <td>Email:</td>
+          <th>egrmxhenry@yahoo.com.mx</th>
+        </tr>
+        <tr data-contact-info="phone">
+          <td>Página de Ventas:</td>
+          <th>
+            <a href="index.html">ventas.grupocaesa.com.mx</a>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section data-map>
+    <h2>UBICACIÓN</h2>
+    <div id="world_map"></div>
+    <iframe id="map_google"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d481726.8875385761!2d-99.42381676536765!3d19.391166837389903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1672944823764!5m2!1ses-419!2smx"
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <form action="">
+
+  </form>
 </body>
 
 </html>

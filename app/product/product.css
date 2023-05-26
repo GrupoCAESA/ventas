@@ -1,0 +1,125 @@
+@import url("../../modules/document/document.css");
+@import url("../../modules/menu/menu.css");
+@import url("css/enlarged_image.css");
+@import url("css/gallery.css");
+@import url("css/information.css");
+@import url("css/specifications.css");
+
+body {
+  background: var(--color-background-gradient);
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  overflow: hidden auto;
+  width: 100vw;
+}
+
+@media (min-width: 769px) {
+  body {
+    grid-template-areas:
+      "menu header"
+      "menu main"
+      "menu footer";
+    grid-template-columns: 55px 1fr;
+  }
+}
+
+header {
+  grid-area: header;
+  width: 100%;
+  padding: 30px 10px 10px;
+}
+
+@media(max-width:400px) {
+  header {
+    padding: 50px 10px 10px;
+  }
+}
+
+header h1 {
+  font-family: 'Caesa', sans-serif;
+  font-size: 1.5em;
+}
+
+@media(min-width:400px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+}
+
+@media(min-width:500px) {
+  header h1 {
+    font-size: 2.3em;
+  }
+}
+
+main {
+  column-gap: 30px;
+  row-gap: 40px;
+  grid-area: main;
+  height: fit-content;
+  padding: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "gallery"
+    "info"
+    "specs";
+  grid-template-columns: 100%;
+  overflow: hidden;
+}
+
+@media (min-width:800px) {
+  main {
+    grid-template-areas:
+      "gallery info"
+      "specs specs";
+    grid-template-columns: 60% 1fr;
+  }
+}
+
+main>* {
+  place-self: center;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+tr>* {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+td {
+  border-radius: 0px 0px 0px 8px;
+  background-color: var(--color-selected);
+  color: var(--color-background);
+  letter-spacing: 0.2em;
+}
+
+th {
+  border: 1px solid var(--color-selected);
+  user-select: text;
+  cursor: auto;
+  border-radius: 0px 8px 0px 0px;
+}
+
+footer {
+  grid-area: footer;
+}

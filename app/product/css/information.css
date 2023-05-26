@@ -1,0 +1,17 @@
+#information {
+  grid-area: info;
+}
+
+@media(max-width:600px) {
+  #information tr {
+    grid-template-columns: 100%;
+  }
+
+  #information td {
+    border-radius: 8px 8px 0px 0px;
+  }
+
+  #information th {
+    border-radius: 0px 0px 8px 8px;
+  }
+}

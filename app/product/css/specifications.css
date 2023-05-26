@@ -1,0 +1,41 @@
+#specifications {
+  grid-area: specs;
+  width: 100%;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#specifications h2 {
+  font-family: 'Caesa', sans-serif;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+@media (min-width: 300px) {
+  #specifications h2 {
+    font-size: 1.2em;
+  }
+}
+
+#specifications table {
+  max-width: 1000px;
+  width: 100%;
+  min-width: 200px;
+}
+
+@media(max-width:600px) {
+  #specifications tr {
+    grid-template-columns: 100%;
+  }
+
+  #specifications td {
+    border-radius: 8px 8px 0px 0px;
+  }
+
+  #specifications th {
+    border-radius: 0px 0px 8px 8px;
+  }
+}

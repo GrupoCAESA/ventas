@@ -1,0 +1,83 @@
+@import url("../../modules/document/document.css");
+@import url("../../modules/menu/menu.css");
+@import url("css/filter.css");
+@import url("css/product.css");
+@import url("css/groups.css");
+@import url("css/result_search.css");
+@import url("css/error.css");
+
+body {
+  background: var(--color-background-gradient);
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+}
+
+@media (min-width:600px) and (min-height: 500px) {
+  body {
+    grid-template-areas:
+      "filter header"
+      "filter main"
+      "filter footer";
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+@media (min-width: 769px) and (min-height: 500px) {
+  body {
+    grid-template-areas:
+      "menu filter header"
+      "menu filter main"
+      "menu filter footer";
+    grid-template-columns: 55px 200px 1fr;
+  }
+}
+
+header {
+  grid-area: header;
+  place-self: center;
+}
+
+main {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: justify;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  grid-area: main;
+  height: 100%;
+  justify-content: space-between;
+  overflow: hidden auto;
+  padding: 30px 10px;
+  place-self: center;
+  width: 100%;
+}
+
+main::-webkit-scrollbar {
+  width: 3px;
+}
+
+@media (min-width:600px) and (min-height: 500px) {
+  main::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+footer {
+  grid-area: footer;
+  place-self: center;
+}

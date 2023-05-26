@@ -1,0 +1,11 @@
+#result_search {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  padding: 20px 10px 10px;
+}
+
+@media (min-width: 520px) {
+  #result_search {
+    font-size: 2em;
+  }
+}

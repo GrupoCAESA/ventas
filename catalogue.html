@@ -15,15 +15,132 @@
   <title>Catálogo | Ventas Grupo CAESA</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="canonical" href="https://ventas.grupocaesa.com.mx/catalogue.html">
-  <link rel="stylesheet" href="./Assets/Pages/Catalogue/Catalogue.css">
-  <script type="module" src="./Assets/Pages/Catalogue/Catalogue.js"></script>
+  <link rel="stylesheet" href="app/catalogue/catalogue.css">
+  <script type="module" src="app/catalogue/catalogue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.11.0/lottie.min.js"
     integrity="sha512-XCthc/WzPfa+oa49Z3TI6MUK/zlqd67KwyRL9/R19z6uMqBNuv8iEnJ8FWHUFAjC6srr8w3FMZA91Tfn60T/9Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+  <nav id="menu">
+    <img id="menu-logo" src="./resources/images/logo.webp" alt="Grupo CAESA">
+    <label id="menu-toggler" title="Menú">
+      <i></i>
+      <input type="checkbox">
+    </label>
+    <ul id="menu-list">
+      <li data-menu-list-item="home" title="Inicio">
+        <a href="./index.html">
+          <i></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      <li data-menu-list-item="catalogue" title="Catálogo">
+        <a href="./catalogue.html">
+          <i></i>
+          <span>Productos</span>
+        </a>
+      </li>
+      <li data-menu-list-item="contact" title="Contacto">
+        <a href="./contact.html">
+          <i></i>
+          <span>Contacto</span>
+        </a>
+      </li>
+      <li data-menu-list-item="appearance" title="Apariencia">
+        <a>
+          <i></i>
+          <span>Apariencia</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
+  <aside id="filters">
+    <label id="filters-toggler" title="Filtrado">
+      <i></i>
+      <input type="checkbox">
+    </label>
+    <div id="filters-container">
+      <section data-filters-container-section="category">
+        <h2>Categoría</h2>
+        <select>
+          <option value="All">-- Todos --</option>
+          <option value="miscellaneous">Misceláneos</option>
+          <option value="cranes">Grúas</option>
+          <option value="transport">Transporte</option>
+          <option value="heavy_machinery">Maquinaria Pesada</option>
+          <option value="lifting_equipment">Equipos de elevación</option>
+          <option value="maritime_equipment">Equipo Maritimo</option>
+          <option value="metal_structures">Estructura Metálica</option>
+          <option value="injection_and_blowing">Inyección y Soplado</option>
+          <option value="industrial_processes">Procesos Industriales</option>
+          <option value="mechanical_metal">Metal Mecánica</option>
+          <option value="marine_platforms">Plataformas Marinas</option>
+          <option value="hydraulic_systems">Sistemas Hidráulicos</option>
+          <option value="drilling">Perforación</option>
+          <option value="minerals">Minerales</option>
+          <option value="scrap_and_recycling">Chatarra y Reciclaje</option>
+          <option value="real_estate">Inmobiliaria</option>
+          <option value="general_miscellaneous">Misceláneos General</option>
+        </select>
+      </section>
+      <section data-filters-container-section="type" style="display: none;">
+        <h2>Tipo</h2>
+        <select></select>
+      </section>
+      <section data-filters-container-section="model" style="display: none;">
+        <h2>Modelo</h2>
+        <select></select>
+      </section>
+      <section data-filters-container-section="province">
+        <h2>Estado</h2>
+        <select></select>
+      </section>
+      <section data-filters-container-section="status">
+        <h2>Condición</h2>
+        <select></select>
+      </section>
+      <section data-filters-container-section="price">
+        <h2>Precio</h2>
+        <label id="minimum" class="range">
+          <span>Mínimo</span>
+          <input type="range">
+        </label>
+        <label id="maximum" class="range">
+          <span>Máximo</span>
+          <input type="range">
+        </label>
+      </section>
+    </div>
+  </aside>
+
+  <header>
+    <section id="result_search" style="display: none;">
+      <h2>Resultados de la búsqueda:</h2>
+    </section>
+    <section id="error" style="display: none;">
+      <h2>Productos no encontrados</h2>
+      <i></i>
+      <p>Por el momento no contamos con productos que tengan las caracteristicas solicitadas. Lo
+        invitamos a que intente con otros valores.</p>
+    </section>
+  </header>
+
+  <main>
+    <ul id="products"></ul>
+    <aside id="group">
+      <button id="previous" class="btnGroup" style="visibility: hidden;">&#60;</button>
+      <div data-number_group>
+        <p></p>
+        <span></span>
+      </div>
+      <button id="next" class="btnGroup" style="visibility: hidden;">&#62;</button>
+    </aside>
+  </main>
+
+  <footer></footer>
 </body>
 
 </html>
