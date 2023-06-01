@@ -1,0 +1,84 @@
+#contact {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: inherit;
+}
+
+#contact table {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: inherit;
+}
+
+#contact tbody {
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: fit-content;
+  width: inherit;
+  gap: 10px;
+}
+
+@media (min-width: 500px) {
+  #contact tbody {
+    gap: 5px;
+  }
+}
+
+#contact tr {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+  justify-content: center;
+  max-width: 400px;
+  padding: 5px 0;
+  width: inherit;
+  gap: 10px;
+}
+
+@media (min-width: 500px) {
+  #contact tr {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+}
+
+#contact tr td {
+  display: flex;
+  min-width: fit-content;
+}
+
+@media (min-width: 500px) {
+  #contact tr td {
+    justify-content: flex-end;
+    width: 40%;
+  }
+}
+
+#contact tr th {
+  -webkit-box-pack: start;
+  cursor: text;
+  display: flex;
+  min-width: fit-content;
+  user-select: text;
+}
+
+@media (min-width: 500px) {
+  #contact tr th {
+    justify-content: flex-start;
+    width: 60%;
+  }
+}
+
+#contact a:hover {
+  color: var(--color-selected);
+}

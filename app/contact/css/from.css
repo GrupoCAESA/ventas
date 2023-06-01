@@ -1,0 +1,97 @@
+#form {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  gap: 10px;
+  justify-content: center;
+  width: inherit;
+}
+
+#form h2 {
+  padding: 0 0 5px;
+}
+
+#form form {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  gap: 15px;
+  justify-content: center;
+  width: inherit;
+}
+
+#form label {
+  display: grid;
+  max-width: 500px;
+  min-width: 200px;
+  padding: 0 10px;
+  width: inherit;
+}
+
+#form label>* {
+  align-self: self-start;
+  grid-area: 1/1;
+  justify-self: start;
+  padding: 15px;
+}
+
+#form label span {
+  cursor: text;
+  left: 5px;
+  position: relative;
+  -webkit-transition: all 0.5s, background-color 0.2s, color 0s;
+  -o-transition: all 0.5s, background-color 0.2s, color 0s;
+  transition: all 0.5s, background-color 0.2s, color 0s;
+  z-index: 1;
+}
+
+#form label input,
+#form label textarea {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-text);
+  border-radius: 8px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+  width: inherit;
+}
+
+#form label textarea {
+  font-family: inherit;
+  min-height: 200px;
+  resize: vertical;
+}
+
+#form label textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.input-google_style span {
+  background-color: var(--color-background);
+  border-radius: 4px;
+  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  font-size: 0.7em;
+  padding: 2px 5px !important;
+  -webkit-transform: translate(5px, -7px);
+  -ms-transform: translate(5px, -7px);
+  transform: translate(5px, -7px);
+}

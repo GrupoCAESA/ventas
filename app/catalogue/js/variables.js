@@ -14,10 +14,10 @@ class variables {
 
   static async load() {
     if (!variables.#db) {
-      catalogue.#db = await connection.connect.get(
-        "/app/catalogue/json/db.json"
-      );
-      // variables.#db = await connection.connect.get("/test/catalogue.json");
+      // catalogue.#db = await connection.connect.get(
+      //   "/app/catalogue/json/db.json"
+      // );
+      variables.#db = await connection.connect.get("/test/catalogue.json");
     }
     if (!variables.#filters) {
       variables.#filters = await connection.connect.get(

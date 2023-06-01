@@ -1,5 +1,10 @@
 @import url("../../modules/document/document.css");
 @import url("../../modules/menu/menu.css");
+@import url("css/background.css");
+@import url("css/contact.css");
+@import url("css/map.css");
+@import url("css/from.css");
+@import url("css/button.css");
 
 body {
   background: var(--color-background-gradient);
@@ -25,10 +30,83 @@ body {
   }
 }
 
-#background {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
+header {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 35px;
+  grid-area: header;
+  padding: 40px 10px 10px;
+  width: 100%;
+  z-index: 1;
+}
+
+header img {
+  -webkit-filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.3));
+  max-width: 600px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: inherit;
+}
+
+header .typewriter {
+  font-size: 1.1em;
+  font-weight: 100;
+  line-height: 1.5em;
+  max-width: 80%
+}
+
+@media (min-width: 400px) {
+  header .typewriter {
+    font-size: 1.25em;
+  }
+}
+
+@media (min-width: 600px) {
+  header .typewriter {
+    font-size: 1.5em;
+  }
+}
+
+main {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 40px;
+  grid-area: main;
+  padding: 30px 5px;
+  width: 100%;
+  z-index: 1;
+}
+
+main h2 {
+  font-family: 'caesa', sans-serif;
+  font-size: 1.2em;
+}
+
+@media (min-width: 330px) {
+  main {
+    padding: 30px 10px;
+  }
+
+  main h2 {
+    font-size: 1.8em;
+  }
+}
+
+footer {
+  grid-area: footer;
+  z-index: 1;
 }

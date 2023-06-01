@@ -16,9 +16,14 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="canonical" href="https://ventas.grupocaesa.com.mx/contact.html">
   <link rel="stylesheet" href="app/contact/contact.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <script type="module" src="app/contact/contact.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.11.0/lottie.min.js"
     integrity="sha512-XCthc/WzPfa+oa49Z3TI6MUK/zlqd67KwyRL9/R19z6uMqBNuv8iEnJ8FWHUFAjC6srr8w3FMZA91Tfn60T/9Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/gsap.min.js"
+    integrity="sha512-FOw+bgWRx/Kk1SAVkNO8CiXx9FFP7kFq+hcYWruJRdqjhzB39Yt/CVFgcFIXfTH0+oSZNUMEQNq1XI9+nMAW0Q=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
@@ -59,41 +64,68 @@
 
   <aside id="background"></aside>
 
-  <section id="contact">
+  <header>
     <img src="resources/images/logo.webp" alt="Grupo CAESA">
     <p class="typewriter"></p>
-    <h2>Datos de Contacto</h2>
-    <table>
-      <tbody>
-        <tr data-contact-info="phone">
-          <td>Móvil:</td>
-          <th>55 43 82 84 65</th>
-        </tr>
-        <tr data-contact-info="email">
-          <td>Email:</td>
-          <th>egrmxhenry@yahoo.com.mx</th>
-        </tr>
-        <tr data-contact-info="phone">
-          <td>Página de Ventas:</td>
-          <th>
-            <a href="index.html">ventas.grupocaesa.com.mx</a>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  </header>
 
-  <section data-map>
-    <h2>UBICACIÓN</h2>
-    <div id="world_map"></div>
-    <iframe id="map_google"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d481726.8875385761!2d-99.42381676536765!3d19.391166837389903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1672944823764!5m2!1ses-419!2smx"
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
+  <main>
+    <section id="contact">
+      <h2>Datos de Contacto</h2>
+      <table>
+        <tbody>
+          <tr data-contact-info="phone">
+            <td>Móvil:</td>
+            <th>+52 55 43 82 84 65</th>
+          </tr>
+          <tr data-contact-info="email">
+            <td>Email:</td>
+            <th>egrmxhenry@yahoo.com.mx</th>
+          </tr>
+          <tr data-contact-info="page">
+            <td>Página de Ventas:</td>
+            <th>
+              <a href="index.html">ventas.grupocaesa.com.mx</a>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-  <form action="">
+    <section id="map">
+      <h2>Ubicación</h2>
+      <div id="world_map"></div>
+      <iframe id="google_map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d481726.8875385761!2d-99.42381676536765!3d19.391166837389903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1672944823764!5m2!1ses-419!2smx"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
 
-  </form>
+    <section id="form">
+      <h2>¡Contactenos!</h2>
+      <form>
+        <label>
+          <input type="text" id="form-name" required maxlength="100">
+          <span>Nombre</span>
+        </label>
+        <label>
+          <input type="email" id="form-email" required maxlength="50">
+          <span>Correo Electrónico</span>
+        </label>
+        <label>
+          <input type="text" id="form-issue" required maxlength="30">
+          <span>Asunto</span>
+        </label>
+        <label>
+          <textarea name="message" id="form-message" maxlength="300"></textarea>
+          <span>Mensaje</span>
+        </label>
+        <button type="button" id="button-send">
+          <i class="fa fa-paper-plane-o fa-2x"></i>
+          <p>Enviar</p>
+        </button>
+      </form>
+    </section>
+  </main>
 </body>
 
 </html>

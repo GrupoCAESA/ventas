@@ -8,6 +8,30 @@ class connect {
         console.error("Cannot connect to the requested resource.");
       });
   }
+  static post(
+    url,
+    {
+      headers = {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body = {},
+      fnResolve = () => {},
+      fnRejected = () => {},
+    }
+  ) {
+    fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: body,
+    })
+      .then((response) => response.json())
+      .then(fnResolve)
+      .catch(() => {
+        console.error("Message not sent.");
+        fnRejected();
+      });
+  }
 }
 
 class loading {

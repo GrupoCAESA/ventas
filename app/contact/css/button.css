@@ -1,0 +1,117 @@
+#button-send {
+  align-items: center;
+  border-radius: 50px;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: center;
+  gap: 20px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+}
+
+#button-send:enabled:hover {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#button-send:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+#button-send p {
+  color: var(--color-text);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#button-send:enabled:hover p {
+  -webkit-animation: move 0.5s linear 0.5s forwards;
+  animation: move 0.5s linear 0.5s forwards;
+  color: var(--color-selected);
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#button-send i {
+  color: var(--color-text);
+  font-size: 1.5em;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#button-send:enabled:hover i {
+  -webkit-animation: sending 0.5s linear 0.5s forwards;
+  animation: sending 0.5s linear 0.5s forwards;
+  color: var(--color-selected);
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+@-webkit-keyframes sending {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translate(40px, -60px);
+    transform: translate(40px, -60px);
+  }
+}
+
+@keyframes sending {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translate(40px, -60px);
+    transform: translate(40px, -60px);
+  }
+}
+
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-25px);
+    transform: translateX(-25px);
+  }
+}
+
+@keyframes move {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-25px);
+    transform: translateX(-25px);
+  }
+}

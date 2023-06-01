@@ -4,6 +4,7 @@
   --color-background-gradient: linear-gradient(#f0f0f0 0%, white 60%);
   --color-text: black;
   --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-bacground_contact: transparent;
 }
 
 [data-style="dark"] {
@@ -12,4 +13,5 @@
   --color-background-gradient: linear-gradient(#222222 0%, black 60%);
   --color-text: white;
   --color-shadow: rgba(100, 100, 100, 0.1);
+  --color-bacground_contact: linear-gradient(to bottom, #000508 0%, #163c52 25%, #4f4f47 40%, #c5752d 53%, #b7490f 85%, #2f1107 100%);
 }

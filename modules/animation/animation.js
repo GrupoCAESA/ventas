@@ -52,9 +52,22 @@ class mouseWhell {
   }
 }
 
+function typewriter(paragraph) {
+  const array = paragraph.split("");
+  let i = 0;
+  let print = setInterval(() => {
+    document.querySelector("header>.typewriter").innerHTML += array[i];
+    i++;
+    if (i === array.length) {
+      clearInterval(print);
+    }
+  }, 50);
+}
+
 const animation = Object.freeze({
   lottie,
   mouseWhell,
+  typewriter,
 });
 
 export default animation;

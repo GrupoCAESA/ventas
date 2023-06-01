@@ -1,0 +1,70 @@
+#map {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  gap: 10px;
+  grid-area: map;
+  justify-content: center;
+  width: inherit;
+}
+
+#map h2 {
+  padding-bottom: 20px;
+}
+
+#map iframe {
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 90%;
+}
+
+@media (min-width: 400px) {
+  #map iframe {
+    aspect-ratio: 2/1;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    width: 90%;
+  }
+}
+
+#world_map {
+  aspect-ratio: 2/1.8;
+  height: inherit;
+  max-height: 450px;
+  width: inherit;
+}
+
+#world_map>* {
+  height: 90%;
+  width: 90%;
+}
+
+#world_map path {
+  fill: rgb(153, 153, 153);
+}
+
+#world_map path:hover {
+  fill: var(--color-selected);
+}
+
+#world_map path.MX {
+  fill: rgba(0, 104, 71, 1);
+}
+
+#world_map path.MX:hover {
+  fill: rgba(206, 17, 38, 1);
+}
