@@ -7,6 +7,7 @@ import generate from "./js/generate.js";
   menu.init();
   validity.form();
   animation.typewriter(
+    document.querySelector("header>.typewriter"),
     "Montajes, maniobras, armados, soldadura, acabados, estructura y transportes voluminosos hasta 1200 toneladas."
   );
   await generate.worldMap();

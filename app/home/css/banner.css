@@ -11,7 +11,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-pack: center;
-  gap: 20px;
+  gap: 30px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -19,7 +19,7 @@
   max-width: 1080px;
   padding: 10px 20px;
   place-self: center;
-  width: 80%;
+  width: inherit;
   z-index: 0;
 }
 
@@ -35,7 +35,13 @@
   }
 }
 
-@media (min-width: 540px) and (min-height: 290px) {
+@media (min-width: 440px) and (min-height: 300px) {
+  #banner>h1 {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 700px) and (min-height: 500px) {
   #banner>h1 {
     font-size: 5em;
   }
@@ -45,10 +51,12 @@
   display: block;
   font-size: 0.8em;
   text-align: center;
+  width: 80%;
+  font-size: 1em;
 }
 
-@media (min-height:500px) {
+@media (min-width: 440px) and (min-height: 300px) {
   #banner>p {
-    font-size: 1.1em;
+    font-size: 1.15em;
   }
 }

@@ -2,12 +2,17 @@ class connect {
   static get(url) {
     return fetch(url)
       .then((response) => {
-        return response.json();
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Cannot connect to the requested resource.");
+        }
       })
-      .catch(() => {
-        console.error("Cannot connect to the requested resource.");
+      .catch((error) => {
+        console.error(error);
       });
   }
+
   static post(
     url,
     {
@@ -25,10 +30,16 @@ class connect {
       headers: headers,
       body: body,
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Message not sent.");
+        }
+      })
       .then(fnResolve)
-      .catch(() => {
-        console.error("Message not sent.");
+      .catch((error) => {
+        console.error(error);
         fnRejected();
       });
   }

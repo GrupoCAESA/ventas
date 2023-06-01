@@ -1,0 +1,24 @@
+.sweetAlert-popup {
+  background-color: var(--color-background) !important;
+}
+
+@media (max-width: 300px) {
+  .sweetAlert-popup * {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 539px) {
+  .sweetAlert-popup * {
+    font-size: 1.1em;
+  }
+}
+
+.sweetAlert-title {
+  color: var(--color-text) !important;
+}
+
+.sweetAlert-icon {
+  color: var(--color-selected) !important;
+  border-color: var(--color-selected) !important;
+}

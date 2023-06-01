@@ -133,7 +133,7 @@ function form() {
     name.validity();
     if (message.valid && issue.valid && email.valid && name.valid) {
       connection.connect.post(
-        "https://formsubmit.co/ajax/fknxception.x_o@hotmail.com",
+        "https://formsubmit.co/ajax/ventas@grupocaesa.com.mx",
         {
           body: JSON.stringify({
             name: name.value,
@@ -142,7 +142,17 @@ function form() {
             message: message.value,
           }),
           fnResolve: () => {
-            alert("Mensaje enviado");
+            Swal.fire({
+              position: "top-end",
+              customClass: {
+                popup: "sweetAlert-popup",
+                title: "sweetAlert-title",
+              },
+              icon: "success",
+              title: "Mensaje enviado.",
+              showConfirmButton: false,
+              timer: 3000,
+            });
             name.sendSuccess();
             email.sendSuccess();
             issue.sendSuccess();
@@ -152,9 +162,17 @@ function form() {
             button.setAttribute("disabled", "disabled");
           },
           fnRejected: () => {
-            alert(
-              "Surgio un error al enviar mensaje, le sugerimos intentarlo más tarde."
-            );
+            Swal.fire({
+              position: "top-end",
+              customClass: {
+                popup: "sweetAlert-popup",
+                title: "sweetAlert-title",
+              },
+              icon: "error",
+              title: "Error al enviar mensaje.",
+              showConfirmButton: false,
+              timer: 3000,
+            });
           },
         }
       );

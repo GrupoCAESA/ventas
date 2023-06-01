@@ -60,7 +60,7 @@
 }
 
 #search>a:hover svg path {
-  stroke: black;
+  stroke: var(--color-background);
 }
 
 #search>input {

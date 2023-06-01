@@ -1,5 +1,6 @@
 @import url("../../modules/document/document.css");
 @import url("../../modules/menu/menu.css");
+@import url("../../modules/animation/animation.css");
 @import url("css/background.css");
 @import url("css/contact.css");
 @import url("css/map.css");
@@ -28,6 +29,10 @@ body {
       "menu footer";
     grid-template-columns: 55px 1fr;
   }
+}
+
+body#body {
+  height: 100vh !important;
 }
 
 header {

@@ -52,16 +52,16 @@ class mouseWhell {
   }
 }
 
-function typewriter(paragraph) {
+async function typewriter(item, paragraph) {
   const array = paragraph.split("");
   let i = 0;
-  let print = setInterval(() => {
-    document.querySelector("header>.typewriter").innerHTML += array[i];
+  const print = setInterval(() => {
+    item.textContent += array[i];
     i++;
     if (i === array.length) {
       clearInterval(print);
     }
-  }, 50);
+  }, 45);
 }
 
 const animation = Object.freeze({

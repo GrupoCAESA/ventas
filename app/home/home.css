@@ -1,5 +1,6 @@
 @import url("../../modules/document/document.css");
 @import url("../../modules/menu/menu.css");
+@import url("../../modules/animation/animation.css");
 @import url("css/background.css");
 @import url("css/search.css");
 @import url("css/banner.css");
@@ -34,6 +35,10 @@ body {
       "menu footer";
     grid-template-columns: 55px auto;
   }
+}
+
+body#body {
+  height: 100vh !important;
 }
 
 header {

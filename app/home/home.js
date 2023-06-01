@@ -9,7 +9,18 @@ class search {
     inputSearch.addEventListener("keydown", (event) => {
       if (event.code === "Space") {
         event.preventDefault();
-        alert("Realiza una palabra por búsqueda.");
+        Swal.fire({
+          position: "top-end",
+          customClass: {
+            popup: "sweetAlert-popup",
+            title: "sweetAlert-title",
+            icon: "sweetAlert-icon",
+          },
+          icon: "warning",
+          title: "Realiza una palabra por búsqueda.",
+          showConfirmButton: false,
+          timer: 3000,
+        });
       }
     });
   }
@@ -34,7 +45,18 @@ class search {
         window.location.href = `/catalogue.html?search="${inputSearch.value}"`;
         inputSearch.value = "";
       } else {
-        alert("Ingrese un valor.");
+        Swal.fire({
+          position: "top-end",
+          customClass: {
+            popup: "sweetAlert-popup",
+            title: "sweetAlert-title",
+            icon: "sweetAlert-icon",
+          },
+          icon: "warning",
+          title: "Ingrese un valor.",
+          showConfirmButton: false,
+          timer: 3000,
+        });
       }
     });
   }
