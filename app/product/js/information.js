@@ -14,32 +14,22 @@ class information {
     const container = document
       .getElementById("information")
       .querySelector("tbody");
-    container.innerHTML = `
-    <tr>
-      <td>CATEGORIA</td>
-      <th>${variables.filters.category[information.#product.info.category]}</th>
-    </tr>
-    <tr>
-      <td>TIPO</td>
-      <th>${information.#product.info.type}</th>
-    </tr>
-    <tr>
-      <td>MODELO</td>
-      <th>${information.#product.info.model}</th>
-    </tr>
-    <tr>
-      <td>PROVINCIA</td>
-      <th>${variables.filters.province[information.#product.info.province]}</th>
-    </tr>
-    <tr>
-      <td>ESTADO</td>
-      <th>${variables.filters.status[information.#product.info.status]}</th>
-    </tr>
-    <tr>
-      <td>PRECIO</td>
-      <th>$ ${information.#product.info.price}</th>
-    </tr>
-    `;
+    for (const key in variables.filters.transalte) {
+      const td = document.createElement("td");
+      td.textContent = `${variables.filters.transalte[key]}`;
+      const th = document.createElement("th");
+      if (key === "category" || key === "province" || key === "status") {
+        th.textContent = `${
+          variables.filters[key][information.#product.info[key]]
+        }`;
+      } else {
+        th.textContent = `${information.#product.info[key]}`;
+      }
+      const tr = document.createElement("tr");
+      tr.appendChild(td);
+      tr.appendChild(th);
+      container.appendChild(tr);
+    }
   }
 
   static #gallery() {
