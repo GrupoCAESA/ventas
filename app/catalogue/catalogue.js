@@ -8,7 +8,7 @@ import filters from "./js/filters.js";
 (async () => {
   await variables.load();
   menu.init();
-  animation.lottie.generate("/app/catalogue/json/icons.json");
+  animation.lottie.generate("/app/catalogue/json/lottie-icons.json");
   price.init();
   product.init();
   filters.init();

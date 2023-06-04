@@ -1,0 +1,72 @@
+#products {
+  align-items: center;
+  column-gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden auto;
+  padding: 10px;
+  row-gap: 25px;
+  width: inherit;
+}
+
+#products>li {
+  align-items: center;
+  background-color: transparent;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  max-width: 1000px;
+  min-height: 250px;
+  min-width: 200px;
+  overflow: hidden;
+  padding: 0 0 10px;
+  width: 250px;
+}
+
+#products>li:hover {
+  background-color: var(--c-background-items);
+  color: white;
+  opacity: 1;
+  scale: 1.02;
+  z-index: 1;
+}
+
+#products>li>img {
+  aspect-ratio: 2/1;
+  border-radius: 3px;
+  width: 100%;
+}
+
+#products>li span {
+  color: var(--c-background);
+  overflow: hidden;
+  width: 100%;
+  word-wrap: normal;
+}
+
+#products>li>div {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+#products>li>div>button:hover {
+  scale: 1.05;
+}
+
+#products>li:hover>div>button:first-child {
+  background-color: rgb(214, 211, 40);
+  color: black;
+}
+
+#products>li:hover>div>button:last-child {
+  background-color: rgb(170, 5, 5);
+  color: white;
+}

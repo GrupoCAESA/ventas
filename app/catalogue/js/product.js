@@ -15,16 +15,16 @@ class product {
   }
 
   static #infoProduct(item, property) {
-    const p = document.createElement("p");
-    p.textContent = variables.filters.transalte[property] || "—";
-    const span = document.createElement("span");
-    span.textContent = product.#filterResult(item, property) || "—";
-    if (property === "price" && span.textContent !== "—") {
-      span.textContent = `$ ${span.textContent}`;
+    const spanFirst = document.createElement("span");
+    spanFirst.textContent = variables.filters.transalte[property] || "—";
+    const spanLast = document.createElement("span");
+    spanLast.textContent = product.#filterResult(item, property) || "—";
+    if (property === "price" && spanLast.textContent !== "—") {
+      spanLast.textContent = `$ ${spanLast.textContent}`;
     }
     const li = document.createElement("li");
-    li.appendChild(p);
-    li.appendChild(span);
+    li.appendChild(spanFirst);
+    li.appendChild(spanLast);
     return li;
   }
 

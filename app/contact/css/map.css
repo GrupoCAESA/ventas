@@ -1,16 +1,7 @@
 #map {
   align-items: center;
-  -webkit-box-align: center;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: vertical;
-  -webkit-box-pack: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-pack: center;
   gap: 10px;
   grid-area: map;
   justify-content: center;
@@ -24,7 +15,6 @@
 #map iframe {
   aspect-ratio: 1/1;
   border-radius: 10px;
-  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
   max-width: 700px;
   width: 90%;
@@ -34,7 +24,6 @@
   #map iframe {
     aspect-ratio: 2/1;
     border-radius: 10px;
-    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
     max-width: 700px;
     width: 90%;

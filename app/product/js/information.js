@@ -15,19 +15,19 @@ class information {
       .getElementById("information")
       .querySelector("tbody");
     for (const key in variables.filters.transalte) {
-      const td = document.createElement("td");
-      td.textContent = `${variables.filters.transalte[key]}`;
-      const th = document.createElement("th");
+      const tdFirst = document.createElement("td");
+      tdFirst.textContent = `${variables.filters.transalte[key]}`;
+      const tdSecond = document.createElement("td");
       if (key === "category" || key === "province" || key === "status") {
-        th.textContent = `${
+        tdSecond.textContent = `${
           variables.filters[key][information.#product.info[key]]
         }`;
       } else {
-        th.textContent = `${information.#product.info[key]}`;
+        tdSecond.textContent = `${information.#product.info[key]}`;
       }
       const tr = document.createElement("tr");
-      tr.appendChild(td);
-      tr.appendChild(th);
+      tr.appendChild(tdFirst);
+      tr.appendChild(tdSecond);
       container.appendChild(tr);
     }
   }
@@ -70,13 +70,13 @@ class information {
       specs.style.display = "none";
     }
     for (const key in information.#product.specs) {
-      const td = document.createElement("td");
-      td.textContent = key.toUpperCase();
-      const th = document.createElement("th");
-      th.textContent = information.#product.specs[key];
+      const tdFirst = document.createElement("td");
+      tdFirst.textContent = key.toUpperCase();
+      const tdSecond = document.createElement("td");
+      tdSecond.textContent = information.#product.specs[key];
       const tr = document.createElement("tr");
-      tr.appendChild(td);
-      tr.appendChild(th);
+      tr.appendChild(tdFirst);
+      tr.appendChild(tdSecond);
       tbody.appendChild(tr);
     }
   }

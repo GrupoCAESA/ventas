@@ -13,25 +13,44 @@
   <link rel="canonical" href="https://ventas.grupocaesa.com.mx/modules/configuration/admin/dashboard.html">
   <link rel="stylesheet" href="dashboard.css">
   <script type="module" src="dashboard.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.11.0/lottie.min.js"
+    integrity="sha512-XCthc/WzPfa+oa49Z3TI6MUK/zlqd67KwyRL9/R19z6uMqBNuv8iEnJ8FWHUFAjC6srr8w3FMZA91Tfn60T/9Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
   <header>
-    <div>
+    <div id="search">
       <i></i>
       <input type="text" placeholder="Búsqueda por ID">
     </div>
-    <button>
+    <button id="new_product">
       <i></i>
       <span>Nuevo</span>
     </button>
   </header>
 
   <main>
-    <h2>Productos</h2>
-    <ul>
+    <ul id="products">
       <li>
-        <img src="#" alt="#">
+        <img src="../../../test/img/1/test-1 (1).webp" alt="#">
+        <div>
+          <span>AAA-AAA-AAA</span>
+          <span>Grúa HC238 B</span>
+        </div>
+        <div>
+          <button>
+            <i></i>
+            <span>Editar</span>
+          </button>
+          <button>
+            <i></i>
+            <span>Eliminar</span>
+          </button>
+        </div>
+      </li>
+      <li>
+        <img src="../../../test/img/1/test-1 (1).webp" alt="#">
         <span></span>
         <p></p>
         <div>
@@ -46,7 +65,7 @@
         </div>
       </li>
       <li>
-        <img src="#" alt="#">
+        <img src="../../../test/img/1/test-1 (1).webp" alt="#">
         <span></span>
         <p></p>
         <div>
@@ -61,7 +80,82 @@
         </div>
       </li>
       <li>
-        <img src="#" alt="#">
+        <img src="../../../test/img/1/test-1 (1).webp" alt="#">
+        <span></span>
+        <p></p>
+        <div>
+          <button>
+            <i></i>
+            <span>Editar</span>
+          </button>
+          <button>
+            <i></i>
+            <span>Eliminar</span>
+          </button>
+        </div>
+      </li>
+      <li>
+        <img src="../../../test/img/1/test-1 (1).webp" alt="#">
+        <span></span>
+        <p></p>
+        <div>
+          <button>
+            <i></i>
+            <span>Editar</span>
+          </button>
+          <button>
+            <i></i>
+            <span>Eliminar</span>
+          </button>
+        </div>
+      </li>
+      <li>
+        <img src="../../../test/img/1/test-1 (1).webp" alt="#">
+        <span></span>
+        <p></p>
+        <div>
+          <button>
+            <i></i>
+            <span>Editar</span>
+          </button>
+          <button>
+            <i></i>
+            <span>Eliminar</span>
+          </button>
+        </div>
+      </li>
+      <li>
+        <img src="../../../test/img/1/test-1 (1).webp" alt="#">
+        <span></span>
+        <p></p>
+        <div>
+          <button>
+            <i></i>
+            <span>Editar</span>
+          </button>
+          <button>
+            <i></i>
+            <span>Eliminar</span>
+          </button>
+        </div>
+      </li>
+      <li>
+        <img src="../../../test/img/1/test-1 (1).webp" alt="#">
+        <span></span>
+        <p></p>
+        <div>
+          <button>
+            <i></i>
+            <span>Editar</span>
+          </button>
+          <button>
+            <i></i>
+            <span>Eliminar</span>
+          </button>
+        </div>
+      </li>
+      <li>
+        <img src="../../../test/img/1/test-1 (1).webp" alt="#">
         <span></span>
         <p></p>
         <div>
@@ -78,49 +172,108 @@
     </ul>
   </main>
 
-  <footer>
-    <form>
+  <footer></footer>
+
+  <aside id="info">
+    <section id="info-info">
       <h2>Información</h2>
-      <label>
-        <span>ID</span>
-        <input type="text" disabled="disabled">
-      </label>
-      <label>
-        <span>Categoría</span>
-        <select></select>
-      </label>
-      <label>
-        <span>Tipo</span>
-        <input type="text">
-      </label>
-      <label>
-        <span>Moldeo</span>
-        <input type="text">
-      </label>
-      <label>
-        <span>Estado</span>
-        <select></select>
-      </label>
-      <label>
-        <span>Condición</span>
-        <select></select>
-      </label>
-      <label>
-        <span>Precio</span>
-        <input type="number">
-      </label>
-    </form>
-    <section>
-      <h2>Imagenes</h2>
+      <form>
+        <label>
+          <span>ID:</span>
+          <input type="text" disabled="disabled">
+        </label>
+        <label>
+          <span>Categoría:</span>
+          <select></select>
+        </label>
+        <label>
+          <span>Tipo:</span>
+          <input type="text">
+        </label>
+        <label>
+          <span>Moldeo:</span>
+          <input type="text">
+        </label>
+        <label>
+          <span>Estado:</span>
+          <select></select>
+        </label>
+        <label>
+          <span>Condición:</span>
+          <select></select>
+        </label>
+        <label>
+          <span>Precio:</span>
+          <input type="number">
+        </label>
+      </form>
+    </section>
+    <section id="info-images">
+      <h2>Imágenes</h2>
       <ul>
         <li>
-          <input type="url">
+          <label>
+            <span>URL:</span>
+            <input type="url">
+          </label>
           <span>o</span>
-          <input type="file" accept="image/png, image/jpg, image/jepg, image/webp">
+          <label class="file">
+            <span>Subir</span>
+            <input type="file" accept="image/png, image/jpg, image/jepg, image/webp">
+          </label>
+          <button>X</button>
+        </li>
+        <li>
+          <label>
+            <span>URL:</span>
+            <input type="url">
+          </label>
+          <span>o</span>
+          <label class="file">
+            <span>Subir</span>
+            <input type="file" accept="image/png, image/jpg, image/jepg, image/webp">
+          </label>
+          <button>X</button>
+        </li>
+        <li>
+          <label>
+            <span>URL:</span>
+            <input type="url">
+          </label>
+          <span>o</span>
+          <label class="file">
+            <span>Subir</span>
+            <input type="file" accept="image/png, image/jpg, image/jepg, image/webp">
+          </label>
+          <button>X</button>
         </li>
       </ul>
+      <button>
+        <i></i>
+        <span>Agregar</span>
+      </button>
     </section>
-    <div>
+    <section id="info-specs">
+      <h2>Especificaciones</h2>
+      <ul>
+        <li>
+          <label>
+            <span>Titulo:</span>
+            <input type="text">
+          </label>
+          <label>
+            <span>Descripción:</span>
+            <textarea maxlength="100"></textarea>
+          </label>
+          <button>X</button>
+        </li>
+      </ul>
+      <button>
+        <i></i>
+        <span>Agregar</span>
+      </button>
+    </section>
+    <div id="info-buttons">
       <button disabled="disabled">
         <i></i>
         <span>Guardar</span>
@@ -130,7 +283,11 @@
         <span>Cancelar</span>
       </button>
     </div>
-  </footer>
+  </aside>
+
+  <aside id="bad_size">
+    <span>Se requiere de una pantalla más grande.</span>
+  </aside>
 </body>
 
 </html>

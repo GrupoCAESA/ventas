@@ -37,14 +37,7 @@ body#body {
 
 header {
   align-items: center;
-  -webkit-box-align: center;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-  -ms-flex-direction: column;
   flex-direction: column;
   gap: 35px;
   grid-area: header;
@@ -54,10 +47,8 @@ header {
 }
 
 header img {
-  -webkit-filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.3));
   max-width: 600px;
-  -o-object-fit: contain;
   object-fit: contain;
   width: inherit;
 }
@@ -82,12 +73,7 @@ header .typewriter {
 }
 
 main {
-  -webkit-box-direction: normal;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
   flex-direction: column;
   gap: 40px;
   grid-area: main;
@@ -96,16 +82,18 @@ main {
   z-index: 1;
 }
 
+@media (min-width: 330px) {
+  main {
+    padding: 30px 10px;
+  }
+}
+
 main h2 {
   font-family: 'caesa', sans-serif;
   font-size: 1.2em;
 }
 
 @media (min-width: 330px) {
-  main {
-    padding: 30px 10px;
-  }
-
   main h2 {
     font-size: 1.8em;
   }

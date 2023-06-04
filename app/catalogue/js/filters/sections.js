@@ -50,9 +50,35 @@ class sections {
     sections.partialLoad(sections.#arrayProducts);
   }
 
+  static #categoryAll() {
+    document.querySelector(
+      '[data-filters-container-section="category"]>select'
+    ).innerHTML = `
+      <option value="All">-- Todos --</option>
+      <option value="miscellaneous">Misceláneos</option>
+      <option value="cranes">Grúas</option>
+      <option value="transport">Transporte</option>
+      <option value="heavy_machinery">Maquinaria Pesada</option>
+      <option value="lifting_equipment">Equipos de elevación</option>
+      <option value="maritime_equipment">Equipo Maritimo</option>
+      <option value="metal_structures">Estructura Metálica</option>
+      <option value="injection_and_blowing">Inyección y Soplado</option>
+      <option value="industrial_processes">Procesos Industriales</option>
+      <option value="mechanical_metal">Metal Mecánica</option>
+      <option value="marine_platforms">Plataformas Marinas</option>
+      <option value="hydraulic_systems">Sistemas Hidráulicos</option>
+      <option value="drilling">Perforación</option>
+      <option value="minerals">Minerales</option>
+      <option value="scrap_and_recycling">Chatarra y Reciclaje</option>
+      <option value="real_estate">Inmobiliaria</option>
+      <option value="general_miscellaneous">Misceláneos General</option>
+    `;
+  }
+
   static init() {
     sections.load(variables.db);
     // sections.#loadFilter("category");
+    sections.#categoryAll();
   }
 }
 

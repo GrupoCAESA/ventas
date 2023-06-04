@@ -19,6 +19,6 @@
 }
 
 .sweetAlert-icon {
-  color: var(--color-selected) !important;
   border-color: var(--color-selected) !important;
+  color: var(--color-selected) !important;
 }

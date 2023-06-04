@@ -1,17 +1,7 @@
 #group {
   align-items: center;
-  -webkit-box-align: center;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-pack: center;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   gap: 20px;
   justify-content: center;
@@ -20,17 +10,8 @@
 
 [data-number_group] {
   align-items: center;
-  -webkit-box-align: center;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-pack: center;
   gap: 5px;
   justify-content: center;
 }
@@ -43,14 +24,7 @@
   align-items: center;
   border: 1px solid var(--color-text);
   border-radius: 10px;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  height: 1.5em;
   height: 30px;
   justify-content: center;
   padding: 10px;
@@ -60,7 +34,6 @@
 
 .btnGroup:hover {
   background: var(--color-text);
-  -webkit-box-shadow: 1px 1px 3px 2px var(--color-shadow);
   box-shadow: 1px 1px 3px 2px var(--color-shadow);
   color: var(--color-background);
   font-weight: 700;

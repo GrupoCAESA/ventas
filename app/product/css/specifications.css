@@ -1,17 +1,17 @@
 #specifications {
-  grid-area: specs;
-  width: 100%;
-  gap: 30px;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  gap: 30px;
+  grid-area: specs;
   justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 #specifications h2 {
+  color: var(--color-text);
   font-family: 'Caesa', sans-serif;
   font-weight: 700;
-  color: var(--color-text);
 }
 
 @media (min-width: 300px) {
@@ -22,20 +22,24 @@
 
 #specifications table {
   max-width: 1000px;
-  width: 100%;
   min-width: 200px;
+  width: 100%;
 }
 
-@media(max-width:600px) {
+@media(max-width:500px) {
   #specifications tr {
     grid-template-columns: 100%;
   }
+}
 
-  #specifications td {
+@media(max-width:500px) {
+  #specifications td:first-child {
     border-radius: 8px 8px 0px 0px;
   }
+}
 
-  #specifications th {
+@media(max-width:500px) {
+  #specifications td:last-child {
     border-radius: 0px 0px 8px 8px;
   }
 }

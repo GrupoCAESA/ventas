@@ -25,7 +25,6 @@
 }
 
 #gallery>img:hover {
-  /* box-shadow: 1.8px 1.8px 1px 1px rgba(0, 0, 0, 0.2); */
   filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
   scale: 1.01;
 }

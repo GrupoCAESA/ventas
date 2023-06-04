@@ -31,8 +31,8 @@ body {
 
 header {
   grid-area: header;
-  width: 100%;
   padding: 50px 10px 10px;
+  width: 100%;
 }
 
 header h1 {
@@ -54,18 +54,18 @@ header h1 {
 
 main {
   column-gap: 30px;
-  row-gap: 40px;
-  grid-area: main;
-  height: fit-content;
-  padding: 20px;
-  width: 100%;
   display: grid;
+  grid-area: main;
   grid-template-areas:
     "gallery"
     "info"
     "specs";
   grid-template-columns: 100%;
+  height: fit-content;
   overflow: hidden;
+  padding: 20px;
+  row-gap: 40px;
+  width: 100%;
 }
 
 @media (min-width:800px) {
@@ -94,24 +94,24 @@ tr {
 }
 
 tr>* {
-  padding: 10px;
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 10px;
 }
 
-td {
-  border-radius: 0px 0px 0px 8px;
+td:first-child {
   background-color: var(--color-selected);
+  border-radius: 0px 0px 0px 8px;
   color: var(--color-background);
   letter-spacing: 0.2em;
 }
 
-th {
+td:last-child {
   border: 1px solid var(--color-selected);
-  user-select: text;
-  cursor: auto;
   border-radius: 0px 8px 0px 0px;
+  cursor: auto;
+  user-select: text;
 }
 
 footer {
