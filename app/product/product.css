@@ -53,6 +53,8 @@ header h1 {
 }
 
 main {
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
   column-gap: 30px;
   display: grid;
   grid-area: main;
@@ -61,6 +63,8 @@ main {
     "info"
     "specs";
   grid-template-columns: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   overflow: hidden;
   padding: 20px;
@@ -82,7 +86,12 @@ main>* {
 }
 
 tbody {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 10px;
 }
@@ -95,7 +104,13 @@ tr {
 
 tr>* {
   align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 10px;
 }
@@ -111,6 +126,9 @@ td:last-child {
   border: 1px solid var(--color-selected);
   border-radius: 0px 8px 0px 0px;
   cursor: auto;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
   user-select: text;
 }
 

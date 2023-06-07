@@ -46,8 +46,15 @@ body {
 
 header {
   align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: space-evenly;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
   column-gap: 30px;
   display: none;
+  -ms-flex-align: center;
+  -ms-flex-pack: space-evenly;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   grid-area: header;
   justify-content: space-evenly;
@@ -58,18 +65,26 @@ header {
 
 @media (min-width:300px) and (min-height: 370px) {
   header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
 
 @media (max-width:350px) {
   header {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 }
 
 main {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
   display: none;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 20px;
   grid-area: main;
@@ -81,6 +96,8 @@ main {
 
 @media (min-width:300px) and (min-height: 370px) {
   main {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
@@ -104,6 +121,7 @@ button {
 }
 
 button:hover {
+  -webkit-box-shadow: 2px 3px 1px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 2px 3px 1px 0px rgba(0, 0, 0, 0.15);
   opacity: 1;
 }

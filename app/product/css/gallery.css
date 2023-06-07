@@ -1,7 +1,16 @@
 #gallery {
   align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: center;
   gap: 5px;
   grid-area: gallery;
   justify-content: center;
@@ -19,20 +28,31 @@
   border-radius: 3px;
   cursor: pointer;
   max-width: 800px;
+  -o-object-fit: contain;
   object-fit: contain;
+  -o-object-position: center;
   object-position: center;
   width: 100%;
 }
 
 #gallery>img:hover {
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
   scale: 1.01;
 }
 
 #gallery ul {
   align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   gap: 15px;
   height: 70px;
@@ -55,13 +75,20 @@
 #gallery li {
   align-items: center;
   border-radius: 10px;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
   justify-content: center;
   opacity: 0.8;
 }
 
 #gallery li:hover {
+  -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   opacity: 1;
   scale: 1.1;
@@ -70,6 +97,7 @@
 #gallery li>img {
   aspect-ratio: 1/1;
   border-radius: 10px;
+  -o-object-fit: cover;
   object-fit: cover;
   width: 50px;
 }

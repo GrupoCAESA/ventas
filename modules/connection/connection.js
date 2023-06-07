@@ -93,10 +93,8 @@ class variables {
 
   static async load() {
     if (!variables.#db) {
-      // variables.#db = await connect.get(
-      //   "/modules/connection/json/db.json"
-      // );
-      variables.#db = await connect.get("/test/catalogue.json");
+      variables.#db = await connect.get("/modules/connection/json/db.json");
+      // variables.#db = await connect.get("/test/catalogue.json");
     }
     if (!variables.#filters) {
       variables.#filters = await connect.get(

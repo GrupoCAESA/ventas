@@ -1,8 +1,19 @@
 #banner {
   align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: center;
   gap: 30px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   justify-content: center;
   max-width: 1080px;

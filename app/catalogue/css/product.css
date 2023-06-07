@@ -1,8 +1,18 @@
 #products {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-pack: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 30px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   justify-content: center;
   padding: 0 0 50px;
@@ -13,6 +23,8 @@
   background-color: var(--color-background);
   cursor: pointer;
   gap: 0;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   overflow: hidden;
   width: 200px;
@@ -27,6 +39,7 @@
 [data-products-product]:hover {
   border: none;
   border-radius: 8px;
+  -webkit-box-shadow: 2px 2px 2px 1px var(--color-shadow);
   box-shadow: 2px 2px 2px 1px var(--color-shadow);
   color: var(--color-background);
   scale: 1.03;
@@ -39,8 +52,17 @@
 [data-products-product]>img {
   align-items: center;
   aspect-ratio: 2/1;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: center;
   justify-content: center;
   overflow: hidden;
   width: 100%;
@@ -49,27 +71,51 @@
 .errorImage {
   max-height: 100%;
   max-width: 100%;
+  -o-object-fit: contain;
   object-fit: contain;
+  -o-object-position: center;
   object-position: center;
 }
 
 [data-products-product]>ul {
   align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: center;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   gap: 8px;
   justify-content: center;
   overflow: hidden;
   padding: 10px 20px;
+  -webkit-transition: height 1s ease-in-out;
+  -o-transition: height 1s ease-in-out;
   transition: height 1s ease-in-out;
   width: 100%;
 }
 
 [data-products-product]>ul>li {
   align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: space-evenly;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-pack: space-evenly;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   gap: 20px;
   justify-content: space-evenly;
@@ -78,13 +124,23 @@
 
 [data-products-product]>ul>li>span:first-child,
 [data-products_product_info_data="Price"]>span:first-child {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
 
 [data-products-product]>ul>li>span:first-child {
+  -webkit-box-pack: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: end;
   font-weight: 800;
   gap: 1px;
   justify-content: flex-end;
@@ -97,7 +153,11 @@
 }
 
 [data-products-product]>ul>li>span:last-child {
+  -webkit-box-pack: start;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   width: 50%;
 }

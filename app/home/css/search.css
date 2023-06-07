@@ -1,7 +1,16 @@
 #search {
   align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
   display: none;
+  -ms-flex-align: center;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-pack: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   justify-content: center;
   max-width: 900px;
@@ -13,6 +22,8 @@
 
 @media (min-width: 240px) and (min-height:300px) {
   #search {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
@@ -25,8 +36,14 @@
 #search>a {
   align-items: center;
   border-bottom: 1px solid var(--color-text);
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 12px;
 }
@@ -61,9 +78,51 @@
   }
 }
 
+#search>input::-webkit-input-placeholder {
+  color: var(--color-text);
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#search>input::-moz-placeholder {
+  color: var(--color-text);
+  -moz-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#search>input:-ms-input-placeholder {
+  color: var(--color-text);
+  -ms-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#search>input::-ms-input-placeholder {
+  color: var(--color-text);
+  -ms-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
 #search>input::placeholder {
   color: var(--color-text);
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
+}
+
+#search>input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+#search>input:focus::-moz-placeholder {
+  opacity: 0;
+}
+
+#search>input:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+#search>input:focus::-ms-input-placeholder {
+  opacity: 0;
 }
 
 #search>input:focus::placeholder {

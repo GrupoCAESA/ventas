@@ -1,7 +1,11 @@
 #bad_size {
   align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
   color: var(--c-text);
   display: none;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
   font-size: 1.2em;
   grid-area: bad_size;
   height: 100%;
@@ -12,6 +16,8 @@
 
 @media (max-width:299px) or (max-height: 369px) {
   #bad_size {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }

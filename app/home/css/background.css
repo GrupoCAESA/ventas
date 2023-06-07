@@ -1,7 +1,9 @@
 #background {
+  -webkit-filter: opacity(15%) sepia(80%);
   filter: opacity(15%) sepia(80%);
   height: 100vh;
   left: 0;
+  -o-object-fit: cover;
   object-fit: cover;
   position: absolute;
   top: 0;
