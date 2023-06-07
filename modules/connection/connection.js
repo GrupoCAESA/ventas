@@ -17,10 +17,10 @@ class connect {
     url,
     {
       headers = {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json; charset=UTF-8",
         Accept: "application/json",
       },
-      body = {},
+      body,
       fnResolve = () => {},
       fnRejected = () => {},
     }
@@ -33,13 +33,10 @@ class connect {
       .then((response) => {
         if (response.ok) {
           return response.json();
-        } else {
-          throw new Error("Message not sent.");
         }
       })
       .then(fnResolve)
       .catch((error) => {
-        console.error(error);
         fnRejected();
       });
   }
@@ -82,9 +79,37 @@ class loading {
   }
 }
 
+class variables {
+  static #db;
+  static #filters;
+
+  static get db() {
+    return variables.#db;
+  }
+
+  static get filters() {
+    return variables.#filters;
+  }
+
+  static async load() {
+    if (!variables.#db) {
+      // variables.#db = await connect.get(
+      //   "/modules/connection/json/db.json"
+      // );
+      variables.#db = await connect.get("/test/catalogue.json");
+    }
+    if (!variables.#filters) {
+      variables.#filters = await connect.get(
+        "/modules/connection/json/filters.json"
+      );
+    }
+  }
+}
+
 const connection = Object.freeze({
   connect,
   loading,
+  variables,
 });
 
 export default connection;

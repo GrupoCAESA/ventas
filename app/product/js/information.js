@@ -1,4 +1,3 @@
-import variables from "../../catalogue/js/variables.js";
 import connection from "../../../modules/connection/connection.js";
 
 class information {
@@ -14,13 +13,13 @@ class information {
     const container = document
       .getElementById("information")
       .querySelector("tbody");
-    for (const key in variables.filters.transalte) {
+    for (const key in connection.variables.filters.transalte) {
       const tdFirst = document.createElement("td");
-      tdFirst.textContent = `${variables.filters.transalte[key]}`;
+      tdFirst.textContent = `${connection.variables.filters.transalte[key]}`;
       const tdSecond = document.createElement("td");
       if (key === "category" || key === "province" || key === "status") {
         tdSecond.textContent = `${
-          variables.filters[key][information.#product.info[key]]
+          connection.variables.filters[key][information.#product.info[key]]
         }`;
       } else {
         tdSecond.textContent = `${information.#product.info[key]}`;
@@ -153,7 +152,9 @@ class information {
     const url = new URL(window.location.href);
     const searchParams = new URLSearchParams(url.search);
     const id = JSON.parse(searchParams.get("id"));
-    information.#product = variables.db.find((item) => item.id === id);
+    information.#product = connection.variables.db.find(
+      (item) => item.id === id
+    );
     if (information.#product) {
       information.#gallery();
       information.#characteristics();

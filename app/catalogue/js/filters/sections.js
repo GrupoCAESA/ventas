@@ -1,4 +1,4 @@
-import variables from "../variables.js";
+import connection from "../../../../modules/connection/connection.js";
 
 class sections {
   static #arrayProducts;
@@ -28,9 +28,9 @@ class sections {
       `[data-filters-container-section=${property}]>select`
     );
     container.innerHTML = "";
-    container.appendChild(sections.#createOption("All", "-- Todos --"));
+    container.appendChild(sections.#createOption("all", "-- Todos --"));
     array.forEach((item) => {
-      const key = variables.filters?.[property]?.[item];
+      const key = connection.variables.filters?.[property]?.[item];
       container.appendChild(sections.#createOption(item, key ? key : item));
     });
   }
@@ -54,7 +54,7 @@ class sections {
     document.querySelector(
       '[data-filters-container-section="category"]>select'
     ).innerHTML = `
-      <option value="All">-- Todos --</option>
+      <option value="all">-- Todos --</option>
       <option value="miscellaneous">Misceláneos</option>
       <option value="cranes">Grúas</option>
       <option value="transport">Transporte</option>
@@ -76,7 +76,7 @@ class sections {
   }
 
   static init() {
-    sections.load(variables.db);
+    sections.load(connection.variables.db);
     // sections.#loadFilter("category");
     sections.#categoryAll();
   }

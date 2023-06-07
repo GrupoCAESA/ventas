@@ -1,7 +1,7 @@
+import connection from "../../../../modules/connection/connection.js";
 import price from "../price.js";
 import product from "../product.js";
 import sections from "./sections.js";
-import variables from "../../js/variables.js";
 
 class parameters {
   static #arrayGeneral;
@@ -19,7 +19,7 @@ class parameters {
     if (parameter) {
       const url = new URL(window.location.href);
       const urlParams = new URLSearchParams(url.search);
-      if (value === "All") {
+      if (value === "all") {
         urlParams.delete(parameter);
       } else {
         urlParams.set(parameter, value);
@@ -48,8 +48,8 @@ class parameters {
 
   static #resetArrays() {
     for (const key in parameters.#arraysFilters) {
-      if (parameters.#arraysFilters[key] !== variables.db) {
-        parameters.#arraysFilters[key] = variables.db;
+      if (parameters.#arraysFilters[key] !== connection.variables.db) {
+        parameters.#arraysFilters[key] = connection.variables.db;
       }
     }
   }
@@ -59,7 +59,7 @@ class parameters {
       "[data-filters-container-section]>select"
     );
     selects.forEach((select) => {
-      if (select.value !== "All") {
+      if (select.value !== "all") {
         const property = select.closest("[data-filters-container-section]")
           .dataset.filtersContainerSection;
         parameters.#arraysFilters[property] = parameters.#arraysFilters?.[
@@ -119,13 +119,13 @@ class parameters {
       switch (property) {
         case "category":
           select.addEventListener("change", () => {
-            type.style.display = select.value !== "All" ? "flex" : "none";
-            model.style.display = select.value !== "All" ? "flex" : "none";
+            type.style.display = select.value !== "all" ? "flex" : "none";
+            model.style.display = select.value !== "all" ? "flex" : "none";
             selects.forEach((select) => {
               const data = select.closest("[data-filters-container-section]")
                 .dataset.filtersContainerSection;
               if (data !== "category") {
-                select.value = "All";
+                select.value = "all";
               }
             });
             parameters.#reload();
@@ -139,7 +139,7 @@ class parameters {
               const data = select.closest("[data-filters-container-section]")
                 .dataset.filtersContainerSection;
               if (data !== "category" && data !== "type") {
-                select.value = "All";
+                select.value = "all";
               }
             });
             parameters.#reload();
@@ -197,7 +197,7 @@ class parameters {
 
   static #change() {
     parameters.#resetArrays();
-    parameters.#arrayGeneral = variables.db;
+    parameters.#arrayGeneral = connection.variables.db;
     parameters.#changeSelects();
     parameters.#changePrice();
   }
@@ -210,9 +210,9 @@ class parameters {
   }
 
   static #searchToFilter(property, value) {
-    for (const key in variables.filters?.[property]) {
+    for (const key in connection.variables.filters?.[property]) {
       if (key === value) {
-        return variables.filters[property][key];
+        return connection.variables.filters[property][key];
       }
     }
   }
@@ -222,7 +222,7 @@ class parameters {
     const urlParams = new URLSearchParams(url.search);
     const param = JSON.parse(urlParams.get("search"));
     const searchParam = parameters.#replaceAccents(param);
-    const info = variables.db.filter(
+    const info = connection.variables.db.filter(
       (item) =>
         item.id == JSON.parse(urlParams.get("search")) ||
         parameters
@@ -245,7 +245,7 @@ class parameters {
         parameters.#replaceAccents(item.info.price).includes(searchParam)
     );
     const specs = [];
-    variables.db.forEach((item) => {
+    connection.variables.db.forEach((item) => {
       for (const key in item.specs) {
         if (item.specs[key].toLowerCase().includes(searchParam)) {
           specs.push(item);

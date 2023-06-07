@@ -1,4 +1,4 @@
-import variables from "./variables.js";
+import connection from "../../../modules/connection/connection.js";
 
 class price {
   static #arrayProducts;
@@ -80,7 +80,7 @@ class price {
   }
 
   static init() {
-    price.load(variables.db);
+    price.load(connection.variables.db);
     price.#defineRanges();
   }
 }

@@ -39,7 +39,9 @@ class search {
 
   static #send() {
     const button = document.getElementById("search").querySelector("a");
-    const inputSearch = document.getElementById("search");
+    const inputSearch = document
+      .getElementById("search")
+      .querySelector('input[type="text"]');
     button.addEventListener("click", () => {
       if (inputSearch.value) {
         window.location.href = `/catalogue.html?search="${inputSearch.value}"`;

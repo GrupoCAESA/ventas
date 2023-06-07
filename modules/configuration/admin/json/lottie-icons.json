@@ -1,6 +1,6 @@
 [
   {
-    "container": "header>div:first-child>i",
+    "container": "header>label>i",
     "path": "/app/home/json/icons/search.json",
     "loop": true
   }

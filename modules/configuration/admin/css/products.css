@@ -1,5 +1,5 @@
 #products {
-  align-items: center;
+  align-items: stretch;
   column-gap: 20px;
   display: flex;
   flex-direction: row;
@@ -14,22 +14,21 @@
 #products>li {
   align-items: center;
   background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 1);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: space-between;
-  max-width: 1000px;
   min-height: 250px;
-  min-width: 200px;
   overflow: hidden;
   padding: 0 0 10px;
   width: 250px;
 }
 
 #products>li:hover {
-  background-color: var(--c-background-items);
-  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 4px 1px 0.5px rgba(0, 0, 0, 0.1);
   opacity: 1;
   scale: 1.02;
   z-index: 1;
@@ -55,6 +54,10 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+}
+
+#products>li>div>button {
+  color: var(--c-background);
 }
 
 #products>li>div>button:hover {

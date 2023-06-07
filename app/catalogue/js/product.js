@@ -1,14 +1,13 @@
 import groups from "./product/groups.js";
-import variables from "./variables.js";
 import connection from "../../../modules/connection/connection.js";
 
 class product {
   static #arrayProducts;
 
   static #filterResult(item, property) {
-    for (const key in variables.filters?.[property]) {
+    for (const key in connection.variables.filters?.[property]) {
       if (key === item.info?.[property]) {
-        return variables.filters[property][key];
+        return connection.variables.filters[property][key];
       }
     }
     return item.info[property];
@@ -16,7 +15,8 @@ class product {
 
   static #infoProduct(item, property) {
     const spanFirst = document.createElement("span");
-    spanFirst.textContent = variables.filters.transalte[property] || "—";
+    spanFirst.textContent =
+      connection.variables.filters.transalte[property] || "—";
     const spanLast = document.createElement("span");
     spanLast.textContent = product.#filterResult(item, property) || "—";
     if (property === "price" && spanLast.textContent !== "—") {
@@ -139,7 +139,7 @@ class product {
   }
 
   static init() {
-    product.#arrayProducts = variables.db;
+    product.#arrayProducts = connection.variables.db;
     product.#changeGroup();
     product.#buttonGroup();
   }

@@ -1,5 +1,5 @@
 @import url("../../document/document.css");
-@import url("css/header.css");
+@import url("css/topBar.css");
 @import url("css/info.css");
 @import url("css/products.css");
 @import url("css/bad_size.css");
@@ -11,7 +11,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--c-text) !important;
+  background-color: var(--c-text);
 }
 
 ::-webkit-scrollbar {

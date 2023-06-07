@@ -282,7 +282,11 @@
   min-height: 2em;
   min-width: 200px;
   padding: 5px;
-  resize: vertical;
+  resize: none;
+}
+
+#info-specs>ul>li>label>textarea::-webkit-scrollbar-thumb {
+  background-color: transparent !important;
 }
 
 #info-specs>ul>li>button {
