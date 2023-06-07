@@ -133,7 +133,7 @@ function form() {
     name.validity();
     if (message.valid && issue.valid && email.valid && name.valid) {
       connection.connect.post(
-        "https://formsubmit.co/ajax/ventas@grupocaesa.com.mx",
+        "https://formsubmit.co/ajax/780fae5b0ea77dcd4aabfb57e444daf2",
         {
           body: JSON.stringify({
             name: name.value,
