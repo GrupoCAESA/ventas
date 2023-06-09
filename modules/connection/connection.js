@@ -44,6 +44,9 @@ class connect {
 
 class loading {
   static async image(item, url, tries = 2) {
+    if (!Boolean(url)) {
+      url = "/resources/images/error.webp";
+    }
     if (url.includes("drive.google.com")) {
       let link = url;
       link = link.replace(

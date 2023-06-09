@@ -19,28 +19,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
     integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
 </head>
 
-<body>
-  <header>
-    <label id="search">
-      <i></i>
-      <input type="text" placeholder="Búsqueda por ID">
-    </label>
-    <button id="new_product">Nuevo</button>
-  </header>
-
-  <main>
-    <ul id="products"></ul>
-  </main>
-
-  <footer></footer>
-
-  <aside id="info"></aside>
-
-  <aside id="bad_size">
-    <span>Se requiere de una pantalla más grande.</span>
-  </aside>
-</body>
+<body id="body"></body>
 
 </html>
