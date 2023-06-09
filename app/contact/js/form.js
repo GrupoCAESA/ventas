@@ -127,58 +127,60 @@ function form() {
   const button = document.getElementById("button-send");
   button.addEventListener("click", (event) => {
     event.preventDefault();
-    message.validity();
-    issue.validity();
-    email.validity();
-    name.validity();
-    if (message.valid && issue.valid && email.valid && name.valid) {
-      connection.connect.post(
-        "https://formsubmit.co/ajax/780fae5b0ea77dcd4aabfb57e444daf2",
-        {
-          body: JSON.stringify({
-            name: name.value,
-            email: email.value,
-            subject: issue.value,
-            message: message.value,
-          }),
-          fnResolve: () => {
-            Swal.fire({
-              position: "top-end",
-              customClass: {
-                popup: "sweetAlert-popup",
-                title: "sweetAlert-title",
-              },
-              icon: "success",
-              title: "Mensaje enviado.",
-              showConfirmButton: false,
-              timer: 3000,
-            });
-            name.sendSuccess();
-            email.sendSuccess();
-            issue.sendSuccess();
-            message.sendSuccess();
-            button.querySelector("i").style.display = "none";
-            button.querySelector("p").textContent = "Enviado";
-            button.setAttribute("disabled", "disabled");
-          },
-          fnRejected: () => {
-            Swal.fire({
-              icon: "error",
-              title: "Error al enviar mensaje.",
-              customClass: {
-                popup: "sweetAlert-popup",
-                title: "sweetAlert-title",
-              },
-              showClass: {
-                popup: "animate__animated animate__fadeInDown",
-              },
-              hideClass: {
-                popup: "animate__animated animate__fadeOutUp",
-              },
-            });
-          },
-        }
-      );
+    if (!button.disabled) {
+      message.validity();
+      issue.validity();
+      email.validity();
+      name.validity();
+      if (message.valid && issue.valid && email.valid && name.valid) {
+        connection.connect.post(
+          "https://formsubmit.co/ajax/780fae5b0ea77dcd4aabfb57e444daf2",
+          {
+            body: JSON.stringify({
+              name: name.value,
+              email: email.value,
+              subject: issue.value,
+              message: message.value,
+            }),
+            fnResolve: () => {
+              Swal.fire({
+                position: "top-end",
+                customClass: {
+                  popup: "sweetAlert-popup",
+                  title: "sweetAlert-title",
+                },
+                icon: "success",
+                title: "Mensaje enviado.",
+                showConfirmButton: false,
+                timer: 3000,
+              });
+              name.sendSuccess();
+              email.sendSuccess();
+              issue.sendSuccess();
+              message.sendSuccess();
+              button.querySelector("i").style.display = "none";
+              button.querySelector("p").textContent = "Enviado";
+              button.setAttribute("disabled", "disabled");
+            },
+            fnRejected: () => {
+              Swal.fire({
+                icon: "error",
+                title: "Error al enviar mensaje.",
+                customClass: {
+                  popup: "sweetAlert-popup",
+                  title: "sweetAlert-title",
+                },
+                showClass: {
+                  popup: "animate__animated animate__fadeInDown",
+                },
+                hideClass: {
+                  popup: "animate__animated animate__fadeOutUp",
+                },
+              });
+            },
+          }
+        );
+      }
     }
   });
 }

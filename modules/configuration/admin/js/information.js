@@ -99,8 +99,6 @@ class information {
         li.querySelector('input[type="url"]').value = index;
         list.appendChild(li);
       });
-    } else {
-      list.appendChild(create.structureImage());
     }
 
     const button = document.createElement("button");
@@ -127,8 +125,6 @@ class information {
         const li = create.structureSpecs(information.#item, key);
         list.appendChild(li);
       }
-    } else {
-      list.appendChild(create.structureSpecs());
     }
 
     const button = document.createElement("button");
