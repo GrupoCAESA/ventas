@@ -62,7 +62,7 @@ class validityInput {
     });
   }
 
-  sanitized() {
+  #sanitized() {
     this.#input.value = this.#input.value.trim();
     this.#input.value = this.#input.value.replace("<script>", "");
     this.#input.value = this.#input.value.replace("</script>", "");
@@ -82,7 +82,7 @@ class validityInput {
   }
 
   validity() {
-    this.sanitized();
+    this.#sanitized();
     this.#validityMessage();
     if (!this.#input.validity.valid && Boolean(this.#input.validationMessage)) {
       this.#input.reportValidity();
@@ -163,15 +163,18 @@ function form() {
           },
           fnRejected: () => {
             Swal.fire({
-              position: "top-end",
+              icon: "error",
+              title: "Error al enviar mensaje.",
               customClass: {
                 popup: "sweetAlert-popup",
                 title: "sweetAlert-title",
               },
-              icon: "error",
-              title: "Error al enviar mensaje.",
-              showConfirmButton: false,
-              timer: 3000,
+              showClass: {
+                popup: "animate__animated animate__fadeInDown",
+              },
+              hideClass: {
+                popup: "animate__animated animate__fadeOutUp",
+              },
             });
           },
         }

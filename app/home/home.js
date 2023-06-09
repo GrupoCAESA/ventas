@@ -2,6 +2,24 @@ import menu from "../../modules/menu/menu.js";
 import animation from "../../modules/animation/animation.js";
 
 class search {
+  static #message(title) {
+    Swal.fire({
+      icon: "warning",
+      title: title,
+      customClass: {
+        popup: "sweetAlert-popup",
+        title: "sweetAlert-title",
+        icon: "sweetAlert-icon",
+      },
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
+  }
+
   static #preventSpaces() {
     const inputSearch = document
       .getElementById("search")
@@ -9,18 +27,7 @@ class search {
     inputSearch.addEventListener("keydown", (event) => {
       if (event.code === "Space") {
         event.preventDefault();
-        Swal.fire({
-          position: "top-end",
-          customClass: {
-            popup: "sweetAlert-popup",
-            title: "sweetAlert-title",
-            icon: "sweetAlert-icon",
-          },
-          icon: "warning",
-          title: "Realiza una palabra por búsqueda.",
-          showConfirmButton: false,
-          timer: 3000,
-        });
+        search.#message("Realiza una palabra por búsqueda.");
       }
     });
   }
@@ -47,18 +54,7 @@ class search {
         window.location.href = `/catalogue.html?search="${inputSearch.value}"`;
         inputSearch.value = "";
       } else {
-        Swal.fire({
-          position: "top-end",
-          customClass: {
-            popup: "sweetAlert-popup",
-            title: "sweetAlert-title",
-            icon: "sweetAlert-icon",
-          },
-          icon: "warning",
-          title: "Ingrese un valor.",
-          showConfirmButton: false,
-          timer: 3000,
-        });
+        search.#message("Ingrese un valor.");
       }
     });
   }

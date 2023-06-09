@@ -44,6 +44,10 @@ body {
   }
 }
 
+body#body {
+  height: 100vh !important;
+}
+
 header {
   align-items: center;
   -webkit-box-align: center;

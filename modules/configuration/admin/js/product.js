@@ -1,4 +1,5 @@
 import connection from "../../../connection/connection.js";
+import auth from "../../../connection/js/auth.js";
 import information from "./information.js";
 
 class product {
@@ -8,15 +9,43 @@ class product {
     return product.#array;
   }
 
-  static setArray(array) {
-    if (array.length > 0 || Boolean(array) || typeof array === "object") {
-      product.#array = array;
-    }
-  }
-
   static #delete(item) {
-    product.#array.splice(product.#array.indexOf(item), 1);
-    /* Código para envío a traves de la API de GitHub */
+    Swal.fire({
+      title: `Elimanción del producto ${item.id}`,
+      text: `Eliminaras de forma definitiva el producto ${item.id}`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si, eliminar!",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        product.#array.splice(product.#array.indexOf(item), 1);
+        auth.put(
+          product.#array,
+          () => {
+            Swal.fire(
+              "Eliminado con éxito!",
+              `Has eliminado el elemento ${item.id}.`,
+              "success"
+            );
+          },
+          () => {
+            Swal.fire({
+              icon: "error",
+              title: "Error al eliminar el producto.",
+              showClass: {
+                popup: "animate__animated animate__fadeInDown",
+              },
+              hideClass: {
+                popup: "animate__animated animate__fadeOutUp",
+              },
+            });
+          }
+        );
+      }
+    });
     product.init();
   }
 
@@ -66,7 +95,7 @@ class product {
     }
     if (array.length === 0 || !Boolean(array) || typeof array !== "object") {
       product.#array = connection.variables.db;
-    } else if (array !== product.#array) {
+    } else {
       product.#array = array;
     }
     product.#array.forEach((item) => {
