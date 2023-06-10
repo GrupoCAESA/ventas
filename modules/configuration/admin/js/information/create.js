@@ -88,7 +88,7 @@ class create {
       .textContent.replace(":", "");
     labelFile.querySelector(".input").addEventListener("change", (event) => {
       const file = event.target.files[0];
-      const apiKey = "YmY1MGM2MGIxOTFiNzJkNjRkNGQ3Nzc5MTY5YmNhOTI=";
+      const apiKey = "N2I4YWRjMDM0NjA5NTU1ZDk0OTMzZTQ5ZWE2NjAyNDA=";
       if (file.size < 33554432) {
         const formData = new FormData();
         formData.append("image", file);
