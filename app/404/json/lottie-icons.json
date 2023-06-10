@@ -1,0 +1,8 @@
+[
+  {
+    "container": "main>i",
+    "path": "/app/catalogue/json/icons/error.json",
+    "loop": true,
+    "autoplay": true
+  }
+]

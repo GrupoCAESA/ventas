@@ -1,0 +1,78 @@
+@import url("../../modules/document/document.css");
+@import url("../../modules/menu/menu.css");
+
+body {
+  background: var(--color-background-gradient);
+  display: grid;
+  grid-template-areas: "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 100%;
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+}
+
+@media (min-width: 769px) and (min-height: 500px) {
+  body {
+    grid-template-areas: "menu main";
+    grid-template-columns: 55px 1fr;
+  }
+}
+
+main {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 30px;
+  grid-area: main;
+  height: 100%;
+  overflow: hidden auto;
+  padding: 15px;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  main h2 {
+    padding: 40px 15px;
+  }
+}
+
+main::-webkit-scrollbar {
+  width: 5px;
+}
+
+main h2 {
+  font-family: 'caesa', sans-serif;
+  font-size: 2.5em;
+  padding: 10px;
+}
+
+@media (max-width: 400px) {
+  main h2 {
+    font-size: 1.5em;
+  }
+}
+
+main i {
+  max-width: 400px;
+  width: 90%;
+}
+
+main p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  max-width: 90%;
+}
+
+@media (max-width: 400px) {
+  main p {
+    font-size: 1.1em;
+  }
+}
