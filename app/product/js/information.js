@@ -17,12 +17,20 @@ class information {
       const tdFirst = document.createElement("td");
       tdFirst.textContent = `${connection.variables.filters.transalte[key]}`;
       const tdSecond = document.createElement("td");
-      if (key === "category" || key === "province" || key === "status") {
+      const infoValid =
+        Boolean(information.#product.info[key]) &&
+        information.#product.info[key] !== "all";
+      if (
+        (key === "category" || key === "province" || key === "status") &&
+        infoValid
+      ) {
         tdSecond.textContent = `${
           connection.variables.filters[key][information.#product.info[key]]
         }`;
-      } else {
+      } else if (infoValid) {
         tdSecond.textContent = `${information.#product.info[key]}`;
+      } else {
+        tdSecond.textContent = "";
       }
       const tr = document.createElement("tr");
       tr.appendChild(tdFirst);
@@ -41,25 +49,29 @@ class information {
     };
     const list = document.getElementById("gallery").querySelector("ul");
     let numImage = 0;
-    information.#product.images.forEach((url) => {
-      const image = document.createElement("img");
-      image.alt = `${information.#product.id}/${numImage}`;
-      image.classList.add("loadingFile");
-      if (numImage === 0) {
-        connection.loading.image(galleryImage, url);
-        galleryImage.alt = numImage;
-      }
-      connection.loading.image(image, url);
-      const li = document.createElement("li");
-      li.setAttribute("data-imageGallery", numImage);
-      li.appendChild(image);
-      li.addEventListener("click", () => {
-        galleryImage.src = image.src;
-        galleryImage.alt = li.getAttribute("data-imageGallery");
+    if (information.#product.images.length > 0) {
+      information.#product.images.forEach((url) => {
+        const image = document.createElement("img");
+        image.alt = `${information.#product.id}/${numImage}`;
+        image.classList.add("loadingFile");
+        if (numImage === 0) {
+          connection.loading.image(galleryImage, url);
+          galleryImage.alt = numImage;
+        }
+        connection.loading.image(image, url);
+        const li = document.createElement("li");
+        li.setAttribute("data-imageGallery", numImage);
+        li.appendChild(image);
+        li.addEventListener("click", () => {
+          galleryImage.src = image.src;
+          galleryImage.alt = li.getAttribute("data-imageGallery");
+        });
+        list.appendChild(li);
+        numImage++;
       });
-      list.appendChild(li);
-      numImage++;
-    });
+    } else {
+      document.getElementById("gallery").style.display = "none";
+    }
   }
 
   static #specs() {

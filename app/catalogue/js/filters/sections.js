@@ -31,7 +31,9 @@ class sections {
     container.appendChild(sections.#createOption("all", "-- Todos --"));
     array.forEach((item) => {
       const key = connection.variables.filters?.[property]?.[item];
-      container.appendChild(sections.#createOption(item, key ? key : item));
+      if (item !== "all") {
+        container.appendChild(sections.#createOption(item, key ? key : item));
+      }
     });
   }
 
