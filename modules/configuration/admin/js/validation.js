@@ -56,16 +56,12 @@ class validationUser {
     );
   }
   static async init() {
-    if (
-      window.sessionStorage.getItem("owner") &&
-      window.sessionStorage.getItem("pass") &&
-      window.sessionStorage.getItem("sha")
-    ) {
+    const sessOwner = window.sessionStorage.getItem("owner");
+    const sessPass = window.sessionStorage.getItem("pass");
+    const sessSha = window.sessionStorage.getItem("sha");
+    if (Boolean(sessOwner) && Boolean(sessPass) && Boolean(sessSha)) {
       validationUser.#validity();
     } else {
-      window.sessionStorage.removeItem("owner");
-      window.sessionStorage.removeItem("pass");
-      window.sessionStorage.removeItem("sha");
       const { value: owner } = await Swal.fire({
         title: "Usuario",
         input: "text",

@@ -18,8 +18,8 @@ class auth {
     try {
       token = auth.#token(pass);
     } catch (error) {
-      fnRejected();
       console.clear();
+      fnRejected();
     }
     if (Boolean(owner) && Boolean(pass) && !Boolean(sha) && Boolean(token)) {
       await fetch(auth.#url(owner), {
@@ -29,13 +29,16 @@ class auth {
         },
       })
         .then((response) => {
+          console.log(response);
           if (response.ok) {
-            const res = response.json();
-            window.sessionStorage.setItem("sha", res.sha);
-            fnResolve();
+            return response.json();
           } else {
             throw new Error("");
           }
+        })
+        .then((resolve) => {
+          window.sessionStorage.setItem("sha", resolve.sha);
+          fnResolve();
         })
         .catch(() => {
           fnRejected();
@@ -44,8 +47,8 @@ class auth {
     } else if (Boolean(owner) && Boolean(pass) && Boolean(sha)) {
       fnResolve();
     } else {
-      fnRejected();
       console.clear();
+      fnRejected();
     }
   }
 
@@ -80,8 +83,8 @@ class auth {
           }
         })
         .catch(() => {
-          fnRejected();
           console.clear();
+          fnRejected();
         });
     }
   }
