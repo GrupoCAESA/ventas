@@ -194,7 +194,9 @@ class information {
         const value = child
           .querySelectorAll("label")[1]
           .querySelector(".input").value;
-        object.specs[key] = value;
+        if (Boolean(key) && Boolean(value)) {
+          object.specs[key] = value;
+        }
       }
 
       const array = product.array;

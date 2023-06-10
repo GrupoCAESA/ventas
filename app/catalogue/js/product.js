@@ -5,6 +5,14 @@ class product {
   static #arrayProducts;
 
   static #filterResult(item, property) {
+    if (
+      (property === "category" ||
+        property === "province" ||
+        property === "status") &&
+      item.info[property] === "all"
+    ) {
+      return "";
+    }
     for (const key in connection.variables.filters?.[property]) {
       if (key === item.info?.[property]) {
         return connection.variables.filters[property][key];
