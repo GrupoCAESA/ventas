@@ -19,17 +19,19 @@ class product {
       cancelButtonColor: "#d33",
       confirmButtonText: "Si, eliminar!",
       cancelButtonText: "Cancelar",
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         product.#array.splice(product.#array.indexOf(item), 1);
-        auth.put(
+        await auth.put(
           product.#array,
           () => {
             Swal.fire(
               "Eliminado con éxito!",
               `Has eliminado el elemento ${item.id}.`,
               "success"
-            );
+            ).then(() => {
+              product.init(product.#array);
+            });
           },
           () => {
             Swal.fire({

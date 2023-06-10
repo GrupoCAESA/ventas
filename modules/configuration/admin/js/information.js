@@ -143,7 +143,7 @@ class information {
   static #buttons() {
     const save = document.createElement("button");
     save.textContent = "Guardar";
-    save.addEventListener("click", () => {
+    save.addEventListener("click", async () => {
       const object = {};
       object.id = document
         .getElementById("info-info-form-id")
@@ -206,7 +206,7 @@ class information {
         array.push(object);
       }
 
-      auth.put(
+      await auth.put(
         array,
         () => {
           Swal.fire({

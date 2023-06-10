@@ -6,7 +6,6 @@ import topBar from "../js/topBar.js";
 
 class validationUser {
   static #rejected() {
-    console.clear();
     Swal.fire({
       icon: "error",
       title: "Acceso denegado",
@@ -41,7 +40,9 @@ class validationUser {
         topBar.init();
       },
       () => {
-        console.clear();
+        window.sessionStorage.removeItem("owner");
+        window.sessionStorage.removeItem("pass");
+        window.sessionStorage.removeItem("sha");
         Swal.fire({
           icon: "error",
           title: "Acceso denegado",
@@ -57,10 +58,14 @@ class validationUser {
   static async init() {
     if (
       window.sessionStorage.getItem("owner") &&
-      window.sessionStorage.getItem("pass")
+      window.sessionStorage.getItem("pass") &&
+      window.sessionStorage.getItem("sha")
     ) {
       validationUser.#validity();
     } else {
+      window.sessionStorage.removeItem("owner");
+      window.sessionStorage.removeItem("pass");
+      window.sessionStorage.removeItem("sha");
       const { value: owner } = await Swal.fire({
         title: "Usuario",
         input: "text",
