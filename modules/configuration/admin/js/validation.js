@@ -15,9 +15,8 @@ class validationUser {
   }
 
   static async #validity() {
-    await auth.validation(
-      async () => {
-        document.querySelector("body").innerHTML = `<header>
+    await auth.validation(async () => {
+      document.querySelector("body").innerHTML = `<header>
           <label id="search">
             <i></i>
             <input type="text" placeholder="Búsqueda por ID">
@@ -32,34 +31,18 @@ class validationUser {
         <aside id="bad_size">
           <span>Se requiere de una pantalla más grande.</span>
         </aside>`;
-        await connection.variables.load();
-        animation.lottie.generate(
-          "/modules/configuration/admin/json/lottie-icons.json"
-        );
-        product.init();
-        topBar.init();
-      },
-      () => {
-        window.sessionStorage.removeItem("owner");
-        window.sessionStorage.removeItem("pass");
-        window.sessionStorage.removeItem("sha");
-        Swal.fire({
-          icon: "error",
-          title: "Acceso denegado",
-          text: "El usuario o la contraseña.",
-          showConfirmButton: false,
-          footer:
-            '<a href="/modules/configuration/admin/dashboard.html">Intentelo de nuevo</a>',
-          allowOutsideClick: false,
-        });
-      }
-    );
+      await connection.variables.load();
+      animation.lottie.generate(
+        "/modules/configuration/admin/json/lottie-icons.json"
+      );
+      product.init();
+      topBar.init();
+    });
   }
   static async init() {
     const sessOwner = window.sessionStorage.getItem("owner");
     const sessPass = window.sessionStorage.getItem("pass");
-    const sessSha = window.sessionStorage.getItem("sha");
-    if (Boolean(sessOwner) && Boolean(sessPass) && Boolean(sessSha)) {
+    if (Boolean(sessOwner) && Boolean(sessPass)) {
       validationUser.#validity();
     } else {
       const { value: owner } = await Swal.fire({

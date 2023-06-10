@@ -1,3 +1,18 @@
+function rejectedValidation() {
+  console.clear();
+  window.sessionStorage.removeItem("owner");
+  window.sessionStorage.removeItem("pass");
+  Swal.fire({
+    icon: "error",
+    title: "Acceso denegado",
+    text: "El usuario o la contraseña.",
+    showConfirmButton: false,
+    footer:
+      '<a href="/modules/configuration/admin/dashboard.html">Intentelo de nuevo</a>',
+    allowOutsideClick: false,
+  });
+}
+
 class auth {
   static #url(owner) {
     return `https://api.github.com/repos/${owner}/ventas/contents/modules/connection/json/db.json`;
@@ -10,18 +25,18 @@ class auth {
     );
   }
 
-  static async validation(fnResolve = () => {}, fnRejected = () => {}) {
+  static async validation(fnResolve = () => {}) {
     const owner = window.sessionStorage.getItem("owner");
     const pass = window.sessionStorage.getItem("pass");
-    const sha = window.sessionStorage.getItem("sha");
     let token;
+
     try {
       token = auth.#token(pass);
     } catch (error) {
-      console.clear();
-      fnRejected();
+      rejectedValidation();
     }
-    if (Boolean(owner) && Boolean(pass) && !Boolean(sha) && Boolean(token)) {
+
+    if (Boolean(owner) && Boolean(pass) && Boolean(token)) {
       await fetch(auth.#url(owner), {
         headers: {
           Authorization: `Token ${token}`,
@@ -29,62 +44,69 @@ class auth {
         },
       })
         .then((response) => {
-          console.log(response);
           if (response.ok) {
-            return response.json();
+            fnResolve();
           } else {
             throw new Error("");
           }
         })
-        .then((resolve) => {
-          window.sessionStorage.setItem("sha", resolve.sha);
-          fnResolve();
-        })
         .catch(() => {
-          fnRejected();
-          console.clear();
+          rejectedValidation();
         });
-    } else if (Boolean(owner) && Boolean(pass) && Boolean(sha)) {
-      fnResolve();
     } else {
-      console.clear();
-      fnRejected();
+      rejectedValidation();
     }
   }
 
   static async put(content = [], fnResolve = () => {}, fnRejected = () => {}) {
     const owner = window.sessionStorage.getItem("owner");
     const pass = window.sessionStorage.getItem("pass");
-    const sha = window.sessionStorage.getItem("sha");
-
     let token;
+
     try {
       token = auth.#token(pass);
     } catch (error) {
-      fnRejected();
-      console.clear();
+      rejectedValidation();
     }
-    if (Boolean(sha) && Boolean(owner) && Boolean(pass) && Boolean(token)) {
+
+    if (Boolean(owner) && Boolean(pass) && Boolean(token)) {
       await fetch(auth.#url(owner), {
-        method: "PUT",
         headers: {
           Authorization: `Token ${token}`,
-          "Content-Type": "application/json; charset=UTF-8",
+          "X-GitHub-Api-Version": "2022-11-28",
         },
-        body: JSON.stringify({
-          message: "modification with the GitHub API.",
-          content: btoa(JSON.stringify(content)),
-          sha: sha,
-        }),
       })
         .then((response) => {
           if (response.ok) {
-            fnResolve();
+            return response.json();
+          } else {
+            rejectedValidation();
+            throw new Error("");
           }
         })
-        .catch(() => {
+        .then(async (resolve) => {
+          await fetch(auth.#url(owner), {
+            method: "PUT",
+            headers: {
+              Authorization: `Token ${token}`,
+              "Content-Type": "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify({
+              message: "modification with the GitHub API.",
+              content: btoa(JSON.stringify(content)),
+              sha: resolve.sha,
+            }),
+          }).then((res) => {
+            if (res.ok) {
+              fnResolve();
+            } else {
+              fnRejected();
+              throw new Error("");
+            }
+          });
+        })
+        .catch((error) => {
           console.clear();
-          fnRejected();
         });
     }
   }

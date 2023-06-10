@@ -75,55 +75,62 @@ class create {
     if (item && index) {
       labelUrl.querySelector(".input").value = index;
     }
-    const span = document.createElement("span");
-    span.textContent = "o";
-    const labelFile = create.label({ type: "file", property: "Subir" });
-    labelFile.setAttribute(
-      "accept",
-      "image/png, image/jpg, image/jepg, image/webp"
-    );
-    labelFile.classList.add("file");
-    labelFile.querySelector("span").textContent = labelFile
-      .querySelector("span")
-      .textContent.replace(":", "");
-    labelFile.querySelector(".input").addEventListener("change", (event) => {
-      const file = event.target.files[0];
-      const apiKey = "N2I4YWRjMDM0NjA5NTU1ZDk0OTMzZTQ5ZWE2NjAyNDA=";
-      if (file.size < 33554432) {
-        const formData = new FormData();
-        formData.append("image", file);
-        fetch(`https://api.imgbb.com/1/upload?key=${atob(apiKey)}`, {
-          method: "POST",
-          mode: "no-cors",
-          body: formData,
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.data.display_url) {
-              labelUrl.querySelector(".input").value = data.data.display_url;
-            }
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Imagen cargada!",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-          })
-          .catch(() => {
-            Swal.fire({
-              icon: "error",
-              title: "No se pudo cargar la imagen.",
-              showClass: {
-                popup: "animate__animated animate__fadeInDown",
-              },
-              hideClass: {
-                popup: "animate__animated animate__fadeOutUp",
-              },
-            });
-          });
-      }
-    });
+
+    // const span = document.createElement("span");
+    // span.textContent = "o";
+    //
+    // const labelFile = create.label({ type: "file", property: "Subir" });
+    // labelFile.setAttribute(
+    //   "accept",
+    //   "image/png, image/jpg, image/jepg, image/webp"
+    // );
+    // labelFile.classList.add("file");
+    // labelFile.querySelector("span").textContent = labelFile
+    //   .querySelector("span")
+    //   .textContent.replace(":", "");
+    // labelFile.querySelector(".input").addEventListener("change", (event) => {
+    //   const file = event.target.files[0];
+    /*
+      Use base 64 to encode the API.
+      Generate an API.
+    */
+    //   const apiKey = "N2I4YWRjMDM0NjA5NTU1ZDk0OTMzZTQ5ZWE2NjAyNDA=";
+    //   if (file.size < 33554432) {
+    //     const formData = new FormData();
+    //     formData.append("image", file);
+    //     fetch(`https://api.imgbb.com/1/upload?key=${atob(apiKey)}`, {
+    //       method: "POST",
+    //       mode: "no-cors",
+    //       body: formData,
+    //     })
+    //       .then((response) => response.json())
+    //       .then((data) => {
+    //         if (data.data.display_url) {
+    //           labelUrl.querySelector(".input").value = data.data.display_url;
+    //         }
+    //         Swal.fire({
+    //           position: "top-end",
+    //           icon: "success",
+    //           title: "Imagen cargada!",
+    //           showConfirmButton: false,
+    //           timer: 1500,
+    //         });
+    //       })
+    //       .catch(() => {
+    //         Swal.fire({
+    //           icon: "error",
+    //           title: "No se pudo cargar la imagen.",
+    //           showClass: {
+    //             popup: "animate__animated animate__fadeInDown",
+    //           },
+    //           hideClass: {
+    //             popup: "animate__animated animate__fadeOutUp",
+    //           },
+    //         });
+    //       });
+    //   }
+    // });
+
     const button = document.createElement("button");
     button.textContent = "X";
     button.addEventListener("click", () => {
@@ -134,8 +141,8 @@ class create {
     });
     const li = document.createElement("li");
     li.appendChild(labelUrl);
-    li.appendChild(span);
-    li.appendChild(labelFile);
+    // li.appendChild(span);
+    // li.appendChild(labelFile);
     li.appendChild(button);
     return li;
   }
