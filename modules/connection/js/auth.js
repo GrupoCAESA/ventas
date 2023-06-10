@@ -3,9 +3,11 @@ class auth {
     return `https://api.github.com/repos/${owner}/ventas/contents/modules/connection/json/db.json`;
   }
   static #token(pass) {
-    return `Z2l0aHViX3BhdF8xMUJBQ1FIMkEwa0hWcFdIdG5GZ1c2X3hXcnNiNmphUGpzMkZHd3drZGZaVThRV1dvaGlrMXc2eFdhWmhhNWo0bUFJRllLTj${atob(
-      pass
-    )}`;
+    return atob(
+      `Z2l0aHViX3BhdF8xMUJBQ1FIMkEwa0hWcFdIdG5GZ1c2X3hXcnNiNmphUGpzMkZHd3drZGZaVThRV1dvaGlrMXc2eFdhWmhhNWo0bUFJRllLTj${atob(
+        pass
+      )}`
+    );
   }
 
   static async validation(fnResolve = () => {}, fnRejected = () => {}) {
@@ -14,9 +16,10 @@ class auth {
     const sha = window.sessionStorage.getItem("sha");
     let token;
     try {
-      token = atob(auth.#token(pass));
+      token = auth.#token(pass);
     } catch (error) {
       fnRejected();
+      console.clear();
     }
     if (Boolean(owner) && Boolean(pass) && !Boolean(sha) && Boolean(token)) {
       await fetch(auth.#url(owner), {
@@ -42,8 +45,8 @@ class auth {
       fnResolve();
     } else {
       fnRejected();
+      console.clear();
     }
-    console.clear();
   }
 
   static async put(content = [], fnResolve = () => {}, fnRejected = () => {}) {
@@ -53,9 +56,10 @@ class auth {
 
     let token;
     try {
-      token = atob(auth.#token(pass));
+      token = auth.#token(pass);
     } catch (error) {
       fnRejected();
+      console.clear();
     }
     if (Boolean(sha) && Boolean(owner) && Boolean(pass) && Boolean(token)) {
       await fetch(auth.#url(owner), {
@@ -77,9 +81,9 @@ class auth {
         })
         .catch(() => {
           fnRejected();
+          console.clear();
         });
     }
-    console.clear();
   }
 }
 

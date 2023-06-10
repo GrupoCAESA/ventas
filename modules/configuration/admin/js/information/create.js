@@ -94,6 +94,7 @@ class create {
         formData.append("image", file);
         fetch(`https://api.imgbb.com/1/upload?key=${atob(apiKey)}`, {
           method: "POST",
+          mode: "no-cors",
           body: formData,
         })
           .then((response) => response.json())
